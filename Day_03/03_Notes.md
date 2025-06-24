@@ -22,7 +22,7 @@ Data Storage (cookies, local storage )
    tc39 =-- technecal committee
 
    CSS parser, HTML parser
-   
+   ##  Rename symbol short cut f2 
   ### Alert is using to stop rendering a file
 
   

@@ -3,7 +3,7 @@
   - HTTP/2 is a major revision of the HTTP network protocol, designed to improve web page load times and overall performance by reducing latency and overhead. It
 ## Advantages of HTTP/2
   ### Multiplexing:
--  HTTP/2 allows multiple requests and responses to be sent over a single TCP connection concurrently, unlike HTTP/1
+-  HTTP/2 allows multiple requests and responses to be sent over a single TCP (Transfer Control Protocal) connection concurrently, unlike HTTP/1
  ###  Header Compression:
 - HTTP/2 uses HPACK, a header compression algorithm, to reduce the size of HTTP headers transmitted between client and server
 
@@ -16,7 +16,7 @@ HTTP/2 uses HPACK, a header compression algorithm, to reduce the size of HTTP he
 
 ## Benefits:
 ### Faster speeds:
-- By using QUIC over UDP, HTTP/3 can establish connections and transfer data more quickly than HTTP/2, which uses TCP. 
+- By using QUIC over UDP (User Datagram Protocal), HTTP/3 can establish connections and transfer data more quickly than HTTP/2, which uses TCP. 
 ### Improved security:
 - QUIC provides stronger security features, making HTTP/3 a more secure option than previous versions. 
 ### More stable connections:

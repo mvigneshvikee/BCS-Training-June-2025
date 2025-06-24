@@ -13,7 +13,7 @@ var name = " Vijay" // = " Vijay --- Assignment == Value
 console.log(5+ "9")  // concatination
 console.log(5- "9")
 
-// explicti conversion / coercion
+// explicit conversion / coercion
 
 console.log(5+ parseInt("9"))
 console.log(5+ +"9.7")  // --> 5 + 9 = 14
@@ -78,7 +78,7 @@ console.log(4!=3)  // true
 
 
 // Logical operator  --> boolean
-// && --> and onlywhen both are true
+// && --> and only when both are true
 console.log("3. Logical oprators ")
 console.log("And")
 console.log(true && true )
@@ -91,7 +91,7 @@ console.log((10>=6) && (18<26))
 
 console.log("Hello World")
 
-// OR operator  ---> boolean
+// OR operator  ---> boolean  == > any one is true the answer will be true
 
 console.log("Or ||")
 console.log(true||true) // true

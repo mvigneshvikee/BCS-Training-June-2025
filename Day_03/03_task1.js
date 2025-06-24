@@ -11,7 +11,7 @@ console.log(`${temprature}°C is ${fahrenheit}°F`); //30°C is 86°F
 console.log("hiii"); //30°C is 86°F
 
 //ecmascript 6 / es6   interpolation (substitution) ==${}. Supports multi-line  Interpolation  ===> Expression-returns value
-// es6 template literal ==> `` back tick. inside the back tick we use  interplation
+// es6 template literal ==> `` back tick. inside the back tick we use  interpolation
 
 // Find area of circle given radius
 // Enter the radius

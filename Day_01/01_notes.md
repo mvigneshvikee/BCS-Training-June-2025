@@ -55,8 +55,8 @@
 - kotlin moblie  development application 
 
 ## NOtes
-- WebAppliation - Websites (difference )
-- WebApplication(--> its works mobile tab cross plotform) - Moblie Application-->upgrade download everything   
+- WebAppliation(User change anything it affects all other users. its a dynamic ) - Websites (it is a static website. )
+- WebApplication(--> its works mobile,tab and cross plotform) - Moblie Application-->upgrade download everything   
 
 - front-end back-end Database --> why they are seperate?
 
@@ -64,56 +64,64 @@
 # part2
 - ai 
 - browser 
-3 layer architecture 
-how win ie brand value 
-downfall of ie bad user experience 
-google add company 
-chromium based browsers 
-webpack + babel convert to react code to browser 
+## 3 layer architecture 
+### how win ie 
+- brand value 
+- downfall of ie bad user experience 
+- google is a adverticement company 
+- chromium based browsers 
+### webpack + Babel 
+- webpack + babel convert to react code to browser 👩‍💻👨‍💻
+## What is Babel:
+- Babel is a JavaScript compiler that allows developers to use next-generation JavaScript features today by transforming ES6+ code into backward-compatible versions. Babel plugins are modules that specify how Babel should transform specific syntax or features.
+- Use Babel: Transpile modern JavaScript to older versions.
+- uglyfication / minifiation
 
 domain name providers list out that 
 
-domain name server (dns) 
-cdn content delivery network origin server cdn server user 
-secure indivitual port 80 and 443 google 
+## domain name server (dns) 
+- CDN  (content delivery network)  origin server cdn server user 
+- secure indivitual port 80 and 443 google 
 
-## tcp connction 
- hi acknowladeage 
- unicast
- file transfer 
- web browsing 
- email 
+## TCP (Transfer Control Protocal) connction 
+ - hi acknowladeage 
+ - unicast
+ - file transfer 
+ - web browsing 
+ - email 
  ex 
 
+## UDP (User Datagram Protocal)
  ## how udp works 
-unicast one on one 
- multicast 
- broadcast live streaming only streamer speak 
+- unicast (one on one) 
+- multicast 
+- broadcast (live streaming only streamer speak )
  ex: teams, gaming 
-using avoid lag 
+- using avoid lag 
 
-how entire world is connected ? Submarine OFC cables( optical fyber cable ) submarine cable map
+### how entire world is connected ? Submarine OFC cables( Optical Fyber Cable ) submarine cable map
 
 ## what is ping
 
 ## IP Packets 
 
-## HTTP hypertext tranfer protocol
-difference versions of http 
+## HTTP (hypertext tranfer protocol)
 
-1991 Http 0.9 the one line protocol
+- difference versions of http 
+
+- 1991 Http 0.9 the one line protocol
  (3 way hand shack)
-1996  Http 1.0 building each request get everytime hand shack it 
+- 1996  Http 1.0 building each request get everytime hand shack it 
 
-  Http 1.1 Persistent Connections Request Queuing -- one hand sheck  all request 
-  Http 1.1 Pipelining, response queuing, Head of line blocking (banch the request)
+  - Http 1.1 Persistent Connections Request Queuing -- one hand sheck  all request 
+  - Http 1.1 Pipelining, response queuing, Head of line blocking (banch the request)
 
-  Http 2 2015 Multiplexing over single connection 
-  Http 3 2019 
+   - Http 2 2015 Multiplexing over single connection 
+  - Http 3 2019 
 
- # assingment what happened Http 2 and Http 3
+ # assignment what happened Http 2 and Http 3
 
- Https --> Http2 --> faster
+ - Https --> Http2 --> faster
 
  ## Status code 
    100- infromational
@@ -123,7 +131,7 @@ difference versions of http
     500- server errors
 
 
- data send multiple package
+ - data send multiple package
 
 ## Http Methods CRUD 
  post get put delete 
@@ -137,29 +145,29 @@ render tree == html DOM + cssom
 
 ## Shortcut
 
-- `!<tab>` -- Boiler code plate
-- `ctr/`    - Command
+- `!  + <tab>` -- Boiler code plate in html
+- `ctr + /`    - Command
  Ctrl + Shift + D to duplicate the current line
 <>
 
 ## javascript
 - JavaScript is a dynamically typed language, which means it automatically determines the data type of a variable at runtime based on the value assigned to it, rather than requiring explicit type declarations during variable declaration.
 
-creating a variable is declaration 
- two bottom values - undefined and null 
- typeof() always returns string type value
+- creating a variable is declaration 
+ - two bottom values - undefined and null 
+ - typeof() always returns string type value
 
 
 ## DataTypes 
 ### Primitive datatypes
- number
- string 
- boolean
- undefined
+- string 
+- boolean
+- number
+- undefined
 
 ### NOn Primitieve Datatypes or Reference Datatypes
- objects 
- functions
+ - objects 
+ - functions
 
  ## overloaded operator ( + )
 
