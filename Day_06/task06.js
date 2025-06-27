@@ -38,7 +38,12 @@
 // function introduceWizard(wizardObj){
 //   const {name, title, wand:{core}} = wizardObj
 //   return `${title} ${name} wields a wand with ${core} core.`
+// }
 
+// Normal Way of value getting
+// function introduceWizard(wizardObj){
+  
+//   return `${wizardObj.title} ${wizardObj.name} wields a wand with ${wizardObj.wand.core} core.`
 // }
 
 // console.log(introduceWizard(wizard));
@@ -68,6 +73,16 @@
 //     return `🎒 ${owner}'s bag contains: ${items} `;
 //   }
 // }
+// Early Return
+
+// function packBag1(owner = "Anon", ...items) {
+//   var res
+//   if (items.length === 0) {
+//     return `🎒 ${owner}'s bag is empty.`;
+//   } 
+//   return `🎒 ${owner}'s bag contains: ${items} `;
+// }
+
 
 // console.log(packBag("Natasha", "💄", "🔫"));
 // console.log(packBag());
@@ -85,6 +100,8 @@ function whereAreYou(personObj) {
   } = personObj;
   const {city = "Unknown", planet = "Earth"} = location
 
+// const {user = "Someone",location:{city="Unknown",planet="Earth"}={}} = personObj
+
   return `${user} is currently in ${city}, ${planet} 🌍`;
 }
 
@@ -94,7 +111,18 @@ console.log(
     location: { city: "Asgard", planet: "Yggdrasil" },
   })
 );
+console.log(
+  whereAreYou({
+    user: "Iron Man",
+  })
+);
+console.log(
+  whereAreYou({
+    location: { city: "Asgard", planet: "Yggdrasil" },
+  })
+);
 console.log(whereAreYou({}));
+console.log(whereAreYou());
 
 // Thor is currently in Asgard, Yggdrasil 🌍
 // Someone is currently in Unknown, Earth 🌍
