@@ -47,3 +47,9 @@ function add1(x){
 const add = (x) => (y) => x + y
 console.log(add(5)(9))
 
+
+//map()
+
+const nums = [10,20,40,]
+nums.map(n => n*2)
+console.log(nums)

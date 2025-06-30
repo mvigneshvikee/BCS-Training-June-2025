@@ -7,7 +7,7 @@
 - Edge Case / Corner Case
 - General Case
 
- *** ctrl + Shift + p to open run in inspect sp
+ *** ctrl + Shift + p to open run in inspect snippet=
 ### Day 07 
 # Truthy / Falsy(8 values)
 - if a value converted into a boolean its a truthy.  Other are Falsy. 
