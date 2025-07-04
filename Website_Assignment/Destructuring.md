@@ -46,5 +46,7 @@ console.log(getFirstTwoColors(colors));
 ```
 ### Expected Output:
 ```js
+
 First: red, Second: green
+
 ```
