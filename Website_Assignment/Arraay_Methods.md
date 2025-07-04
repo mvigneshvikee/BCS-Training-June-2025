@@ -148,15 +148,20 @@ const movies = [
 // ===== YOUR CODE BELOW =====
 // Write a function that finds a movie by ID and returns formatted details
 const getMovieDetails = (movies, id) => {
-  // Your code here
-  const filterMovie = movies.filter(movie => movie.id==id)
-  if(filterMovie.length == 0){
-    return `Movie Not Found`
-  }
-  return `${filterMovie[0].title} is a ${filterMovie[0].genre} movie`
-  
-};
+  const vowels = ["a", "e", "i", "o", "u"];
+  const filterMovie = movies.filter((movie) => movie.id == id);
+  if (filterMovie.length != 0) {
+    const firstLetter = filterMovie[0].genre.slice(0, 1).toLowerCase();
 
+    if (vowels.includes(firstLetter)) {
+      return `${filterMovie[0].title} is an ${filterMovie[0].genre} movie`;
+    } else {
+      return `${filterMovie[0].title} is a ${filterMovie[0].genre} movie`;
+    }
+  } else {
+    return `Movies not Found`;
+  }
+};
 console.log(getMovieDetails(movies, 1));
 console.log(getMovieDetails(movies, 5));
 console.log(getMovieDetails(movies, 6));

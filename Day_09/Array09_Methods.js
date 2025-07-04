@@ -62,7 +62,7 @@ const movies = [
     director: "Sandeep Reddy Vanga",
     year: 2017,
     ratings: [9, 8, 9],
-    genre: "Drama",
+    genre: "Action",
   },
   {
     id: 3,
@@ -93,16 +93,27 @@ const movies = [
 // ===== YOUR CODE BELOW =====
 // Write a function that finds a movie by ID and returns formatted details
 // const getMovieDetails = (movies, id) => {
-//   // Your code here
-//   const filterMovie = movies.filter(movie => movie.id==id)
-//   if(filterMovie.length == 0){
-//     return `Movie Not Found`
+//   const vowels = ["a", "e", "i", "o", "u"];
+//   const filterMovie = movies.filter((movie) => movie.id == id);
+//   if (filterMovie.length != 0) {
+//     const firstLetter = filterMovie[0].genre.slice(0, 1).toLowerCase();
+
+//     if (vowels.includes(firstLetter)) {
+//       return `${filterMovie[0].title} is an ${filterMovie[0].genre} movie`;
+//     } else {
+//       return `${filterMovie[0].title} is a ${filterMovie[0].genre} movie`;
+//     }
+//   } else {
+//     return `Movies not Found`;
 //   }
-//   return `${filterMovie[0].title} is a ${filterMovie[0].genre} movie`
-
 // };
+// console.log(getMovieDetails(movies, 1));
+// console.log(getMovieDetails(movies, 5));
+// console.log(getMovieDetails(movies, 6));
 
-const allRatingsAboveForGenre = (movies, rating, genre) => {
+//===================================================================
+
+const allRatingsAboveForGenre1 = (movies, rating, genre) => {
   const genreMovies = movies.filter((movie) => movie.genre == genre);
   const movieRating = genreMovies.every((movie) =>
     movie.ratings.every((r) => r > rating));
@@ -114,6 +125,23 @@ const allRatingsAboveForGenre = (movies, rating, genre) => {
   }
 };
 
+
+// ================================================================
+
+
+const allRatingsAboveForGenre = (movies, rating, genre) => {
+  const genreMovies = movies.filter((movie) => movie.genre == genre);
+  const ratingLit = genreMovies.reduce((acc, curr) => [...acc, ...curr.ratings],[])
+
+  //  ratingLit.every(r => r > rating)
+  // const ratingList = 
+  if(ratingLit.every(r => r > rating)) {
+    return `Yes, all ${genre} movies are above ${rating} ratings`;
+  } else {
+    return `No, not all ${genre} movies are above ${rating} ratings`;
+  }
+  
+};
 console.log(allRatingsAboveForGenre(movies, 7, "Action"));
 console.log(allRatingsAboveForGenre(movies, 8, "Biography"));
 
