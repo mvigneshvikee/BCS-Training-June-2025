@@ -96,8 +96,64 @@ console.log(getTitles(books))
 ['Infinite Jest', 'The Catcher in the Rye']
 ```
 ---
+## Exercise 17  Basic Array Reduce
+Sum all numbers in an array using the reduce method.
+
+### Answer
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+// ===== YOUR CODE BELOW =====
+// Use reduce to sum all numbers
+const sumNumbers = (numbers) => {
+  const sum = numbers.reduce((acc, curr) => acc + curr)
+  return sum
+};
+
+console.log(sumNumbers(numbers));
+
+```
+### Expected Output:
+```js
+15
+```
+
 ---
-## Exercise 19  ( 5 )
+
+## Exercise 18  Find the Top Scorer
+Write a function that generates a summary string for the top scorer using template literals and array methods.
+
+### Answer
+
+```js
+const scores = [
+  { name: "Alice", score: 90 },
+  { name: "Bob", score: 85 },
+  { name: "Charlie", score: 92 },
+  { name: "Diana", score: 88 },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds and formats the top scorer
+const getTopScorer = (scores) => {
+  // Your code here - find the highest score and format the result
+  const topScore = scores.reduce((acc, curr) => acc.score > curr.score ? acc : curr)
+  return `${topScore.name} is the top scorer with a score of ${topScore.score}.`
+};
+
+console.log(getTopScorer(scores));
+
+```
+### Expected Output:
+```js
+Charlie is the top scorer with a score of 92.
+```
+
+---
+
+---
+## Exercise 19  Movie Details Finder
 Write a function that finds a movie by ID and returns its title and genre in a formatted string using array methods and template literals.
 ### Answer
 
@@ -175,8 +231,8 @@ Movie not found
 ```
 ----
 
-## Exercise 16  ( 7 )
-Write a function that checks if all movies of a certain genre have ratings above a certain value using array methods.
+## Exercise 20 Average Rating Calculator
+Write a function that filters movies released after a certain year and calculates their average rating.
 ### Answer
 
 ```js
@@ -202,7 +258,7 @@ const movies = [
     title: "Mahanati",
     director: "Nag Ashwin",
     year: 2018,
-    ratings: [10, 9, 6],
+    ratings: [10, 9, 8],
     genre: "Biography",
   },
   {
@@ -223,7 +279,91 @@ const movies = [
   },
 ];
 
-const allRatingsAboveForGenre = (movies, rating, genre) => {
+// ===== YOUR CODE BELOW =====
+// Write a function that calculates average rating after a specific year
+const getAverageRatingAfterYear = (movies, year) => {
+  const filteredMovies = movies.filter(movie => movie.year > year);
+
+  if (filteredMovies.length === 0) {
+    return "No movies found after the given year";
+  }
+
+  // Collect all ratings into a single array
+  const allRatings = filteredMovies.flatMap(({ ratings }) => ratings);
+
+  // Calculate the average rating
+  const total = allRatings.reduce((acc, rating) => acc + rating, 0);
+  const average = total / allRatings.length;
+
+  return average.toFixed(2); // rounded to 2 decimals
+};
+
+
+console.log(getAverageRatingAfterYear(movies, 2016));
+console.log(getAverageRatingAfterYear(movies, 2020));
+
+
+```
+### Expected Output:
+```js
+8.83
+No movies after the specified year
+```
+
+---
+
+## Exercise 21  High Ratings Checker
+Write a function that checks if all movies of a certain genre have ratings above a certain value using array methods.
+
+### Answer
+
+```js
+const movies = [
+  {
+    id: 1,
+    title: "Baahubali",
+    director: "S. S. Rajamouli",
+    year: 2015,
+    ratings: [8, 9, 10],
+    genre: "Action",
+  },
+  {
+    id: 2,
+    title: "Arjun Reddy",
+    director: "Sandeep Reddy Vanga",
+    year: 2017,
+    ratings: [9, 8, 9],
+    genre: "Drama",
+  },
+  {
+    id: 3,
+    title: "Mahanati",
+    director: "Nag Ashwin",
+    year: 2018,
+    ratings: [10, 9, 8],
+    genre: "Biography",
+  },
+  {
+    id: 4,
+    title: "Eega",
+    director: "S. S. Rajamouli",
+    year: 2012,
+    ratings: [7, 8, 9],
+    genre: "Fantasy",
+  },
+  {
+    id: 5,
+    title: "Jersey",
+    director: "Gowtam Tinnanuri",
+    year: 2019,
+    ratings: [9, 9, 8],
+    genre: "Sports",
+  },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds and formats the top scorer
+const allRatingsAboveForGenre1 = (movies, rating, genre) => {
   const genreMovies = movies.filter((movie) => movie.genre == genre);
   const movieRating = genreMovies.every((movie) =>
     movie.ratings.every((r) => r > rating));
@@ -237,12 +377,11 @@ const allRatingsAboveForGenre = (movies, rating, genre) => {
 
 console.log(allRatingsAboveForGenre(movies, 7, "Action"));
 console.log(allRatingsAboveForGenre(movies, 8, "Biography"));
-
-
 ```
 ### Expected Output:
 ```js
-[2,4,6,8,10]
+Yes, all Action movies are above 7 ratings
+No, not all Biography movies are above 8 ratings
 ```
 
 ---
