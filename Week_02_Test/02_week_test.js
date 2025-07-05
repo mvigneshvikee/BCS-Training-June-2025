@@ -1,7 +1,7 @@
 //  Task 4 
 
 const orders = [
-  { id: 1, dishName: "Burger", category: "Fast Food", chef: "John Doe", ratings: [5, 4, 5] },
+  { id: 1, dishName: "Burger", category: "Fast Food", chef: "John Doe", ratings: [5, 4, 5, 5] },
   { id: 2, dishName: "Pizza", category: "Italian", chef: "Jane Smith", ratings: [4, 3, 5] },
   { id: 3, dishName: "Sushi", category: "Japanese", chef: "Tom Brown", ratings: [5, 5, 4] },
   { id: 4, dishName: "Salad", category: "Healthy", chef: "Alice Green", ratings: [3, 4, 5] },
@@ -55,19 +55,46 @@ const mergeOrders = (order, ...rss) =>{
 
    // Write a function that calculates the total number of ratings for each chef.
 
-   const getTotalRatingsForChefs = (orders)=>{
-    const chef = orders.map(order => order.chef)
-    const totalRating = orders.ratings.reduce((acc, curr) => acc + curr)
-    return totalRating
+// const getRatingsCountPerChef1 = (orders) => {
+//   const ratingCountByChef = {};
 
+//   for (const order of orders) {
+//     const chef = order.chef;
+//     const count = order.ratings.length;
+
+//     if (ratingCountByChef[chef]) {
+//       ratingCountByChef[chef] += count;
+//     } else {
+//       ratingCountByChef[chef] = count;
+//     }
+//   }
+
+//   return ratingCountByChef;
+// };
+
+// console.log(getRatingsCountPerChef(orders));
+
+
+   const getTotalRatingsForChefs = (orders)=>{
+    const obj = {}
+    const chef = orders.map(order => {
+      const chefsName = order.chef
+      // console.log(chefsName);
+      
+      const ratingCount = order.ratings.length
+      // console.log(ratingCount);
+      obj[chefsName] = ratingCount
+      
+    })
+    return obj
    }
 
-   // console.log(getTotalRatingsForChefs(orders));
+  //  console.log(getTotalRatingsForChefs(orders));
    // Should print: { "John Doe": 6, "Jane Smith": 3, "Tom Brown": 3, "Alice Green": 3 }
 //==============================================================
 // Task 04 ==> Write a function that accepts multiple order IDs, fetches the dish names, and returns a formatted string using the rest operator, nullish coalescing, and template literals.
 
-const getDishNamesByIds = (orders, ...ids) =>{
+const getDishNamesByIds1 = (orders, ...ids) =>{
    const dishName = ids.map(id =>{
       const dish = orders.find(order => order.id === id)
        return dish?.dishName ?? "Unknown Dish"
@@ -76,16 +103,20 @@ const getDishNamesByIds = (orders, ...ids) =>{
    
   return `Selected Dish: ${dishName.join(", ")}`
 }
-const getDishNamesByIds1 = (orders , ...ids)=>{
-  const dishName = orders.filter(order => ids.includes(order.id)).map(order => order.dishName)
-  return dishName.join(", ") ?? "Unknown Dish"
+const getDishNamesByIds = (orders , ...ids)=>{
+  const dishNames = orders.filter(order => ids.includes(order.id) ?? "Unknown Dish")  // .map(order => order.dishName)
+  console.log(dishNames);
+  const singleName = dishNames.map(name => name.dishName)
+  console.log(singleName);
+  
+  return singleName.join(", ") ?? "Unknown Dish"
 }
 
-// console.log(getDishNamesByIds(orders, 1, 3, 5));
-//    // Should print: Selected Dishes: Burger, Pasta, Sushi
-//    console.log(getDishNamesByIds(orders, 1, 6));
-//    // Should print: Selected Dishes: Burger, Unknown Dish
-//    console.log(getDishNamesByIds(orders, 5, 1));
+console.log(getDishNamesByIds(orders, 1, 3, 5));
+   // Should print: Selected Dishes: Burger, Pasta, Sushi
+   console.log(getDishNamesByIds(orders, 1, 6));
+   // Should print: Selected Dishes: Burger, Unknown Dish
+   console.log(getDishNamesByIds(orders, 5, 1));
    // Should print: Selected Dishes: Sushi, Burger
 
    //========================================================================
@@ -103,15 +134,15 @@ return dishNames.join(", ")
 
 
 
-console.log(listOrders(...orders));
+// console.log(listOrders(...orders));
    // Should print: Burger (Fast Food), Pizza (Italian), Sushi (Japanese), Salad (Healthy), Pasta (Italian)
-console.log(listOrders(orders[0], orders[1], orders[11]));
+// console.log(listOrders(orders[0], orders[1], orders[11]));
    // Should print: Burger (Fast Food), Pizza (Italian), Unknown Dish (Unknown Category)
 
 //==============================================================================
    // Task 07  Improve `getOrderDetails` through several refactoring steps.
 
-   const order = {
+   const order1 = {
   dish: {
     name: "Burger",
     category: "Fast Food",
@@ -140,6 +171,16 @@ function getOrderDetails1(o) {
 // =======================================================================
 
 // Task 08 Refactor `displayOrderSummary` to improve handling of missing data and enhance code clarity.
+
+const order = { 
+  id: 1,
+  dish: {
+    name: "Burger",
+    category: "Fast Food",
+  },
+  quantity: 2,
+  price: 5.0,
+};
 
 function displayOrderSummary(orderId) {
   const order = orders.find((o) => o.id === orderId);
