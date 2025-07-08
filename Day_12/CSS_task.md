@@ -34,4 +34,14 @@ This tutorial assumes that you already have a static React site (Gatsby/Next) be
 - how to fast website (visit lighthouse)
 - font awesome
 - font awesome cdn --> to get link and paste head tag. then we use icon link
+## Css Gradients
+
+- mycolor.space
+- gradient
+
+## specificity
+- over riding nature is called cascading (water flow --> real worlds example)
+### Don't use inline style 
+- 
+
 
