@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* ID Selector - CM */
+      #awesome {
+        color: teal;
+      }
+
+      /* Class Selector - Dad */
+      .fun {
+        color: purple;
+      }
+
+      /* Element Selector - Me */
+      p {
+        color: crimson !important;
+        font-size: 48px;
+      }
+
+      /* CSS - Cascading - Overriding */
+      /* Sister */
+      p {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Inline - PM -->
+    <!-- id - unique  -->
+    <p id="awesome" class="fun" style="color: pink; font-weight: bold">
+      This is cool
+    </p>
+  </body>
+</html>
+
+<!-- Specificity Order -->
+<!-- !important > Inline Style > ID > class > element -->
