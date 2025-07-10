@@ -190,7 +190,7 @@ const getTopScorer = (scores) => {
 
 //Exc 20
 
-const movies = [
+const movies1 = [
   {
     id: 1,
     title: "Baahubali",
@@ -253,6 +253,127 @@ const getAverageRatingAfterYear = (movies, year) => {
 };
 
 
-console.log(getAverageRatingAfterYear(movies, 2016));
-console.log(getAverageRatingAfterYear(movies, 2020));
+// console.log(getAverageRatingAfterYear(movies, 2016));
+// console.log(getAverageRatingAfterYear(movies, 2020));
 
+//=======================================================
+
+// Task 21
+const movies2 = [
+{
+    id: 1,
+    title: "Baahubali",
+    director: "S. S. Rajamouli",
+    year: 2015,
+    ratings: [8, 9, 10],
+    genre: "Action",
+  },
+  {
+    id: 2,
+    title: "Arjun Reddy",
+    director: "Sandeep Reddy Vanga",
+    year: 2017,
+    ratings: [9, 8, 9],
+    genre: "Drama",
+  },
+  {
+    id: 3,
+    title: "Mahanati",
+    director: "Nag Ashwin",
+    year: 2018,
+    ratings: [10, 9, 8],
+    genre: "Biography",
+  },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that formats movie titles with their ratings
+const getTitlesAndRatings = (movies) => 
+   movies.reduce((acc, curr) => acc.concat(curr.ratings), []);
+
+// console.log(getTitlesAndRatings(movies));
+
+// ### Expected Output:
+// ```js
+// [8,9,10,9,8,9,10,9,8]
+// ```
+
+//=========================
+
+// task 24 
+const movies3 = [
+  {
+    id: 1,
+    title: "Baahubali",
+    ratings: [8, 9, 10],
+  },
+  {
+    id: 2,
+    title: "Arjun Reddy",
+    ratings: [9, 8, 9],
+  },
+  {
+    id: 3,
+    title: "Mahanati",
+    ratings: [10, 9, 8],
+  },
+  {
+    id: 4,
+    title: "Eega",
+    ratings: [7, 8, 9],
+  }, 
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds movie titles with high ratings
+// const getTitlesWithHighRatings = (movies, threshold) => {
+// const moviesName = movies.filter(movie => movie.ratings.some(ratings => ratings >= threshold)).map(movie => movie.title)
+// return moviesName
+// };
+const getTitlesWithHighRatings = (movies, threshold) => {
+  return movies
+    .filter(movie => movie.ratings.some(rating => rating >= threshold))
+    .map(movie => movie.title);
+};
+
+// console.log(JSON.stringify(getTitlesWithHighRatings(movies, 9)));
+// console.log(JSON.stringify(getTitlesWithHighRatings(movies, 10)));
+
+//===================================================
+// task 25
+const movies = [
+  {
+    title: "Baahubali",
+    ratings: [8, 9, 10],
+  },
+  {
+    title: "Arjun Reddy",
+    ratings: [9, 8, 9],
+  },
+  {
+    title: "Jersey",
+    ratings: [9, 9, 8],
+  },
+  {
+    title: "Mahanati",
+    ratings: [10, 9, 8],
+  },
+  {
+    title: "Eega",
+    ratings: [7, 8, 9],
+  },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that sorts movie titles by average rating
+const getTitlesSortedByAverageRating = (movies) => {
+  const movieCopy = movies.slice()
+  const sortMovie = movieCopy.sort((a, b) => {
+    const avgA =a.ratings.reduce((a,b) => a + b, 0)/a.ratings.length
+    const avgB =b.ratings.reduce((a,b) => a + b, 0)/b.ratings.length
+return avgB - avgA
+  }).map(movie => movie.title)
+  return sortMovie
+};
+
+console.log(JSON.stringify(getTitlesSortedByAverageRating(movies)));
