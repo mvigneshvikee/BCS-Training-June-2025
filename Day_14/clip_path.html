@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip Path</title>
+    <style>
+        body{
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-content: center;
+        }
+        img{
+            width: 400px;
+        
+         clip-path: circle(31.5% at 63% 33%);
+         filter: grayscale(100%);
+
+transition: 1s all;
+        }
+        img:hover{
+            transform: scale(2.5) rotate(360deg);
+clip-path: circle(94.9% at 65% 31%);
+filter: grayscale(0);
+        }
+    </style>
+</head>
+<body>
+    <img src="https://t4.ftcdn.net/jpg/08/06/32/47/360_F_806324737_PtuiXSLigMpB35cW0P0OQunkrZLsx5U9.jpg" alt="">
+</body>
+</html>

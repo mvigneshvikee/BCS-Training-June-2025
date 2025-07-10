@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-content: center;
+      }
+
+      .box {
+        height: 200px;
+        /* width: 400px; */
+        /* aspect-ratio: 16 / 9; */
+        /* aspect-ratio: 4 / 3; */
+        /* aspect-ratio: 21 / 9; */
+        aspect-ratio: 1 / 1;
+
+        background: crimson;
+        transition: 2s all;
+      }
+
+      /* Pseudo class selector  - Mouse over*/
+      .box:hover {
+        /* background: orange; */
+        transform: scale(0.5) rotate(90deg);
+        border-radius: 30%;
+        background: orange;
+        /* transform: scale(1.1) translateX(-30px); */
+      }
+
+      /* Mouse click */
+      .box:active {
+        /* background: teal; */
+        transform: scale(0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
