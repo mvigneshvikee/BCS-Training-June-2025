@@ -17,8 +17,8 @@ This tutorial assumes that you already have a static React site (Gatsby/Next) be
 
 ---
 - negative space
-- proximatry Realed things near by 
-- Repeatation
+- proximity Realed things near by 
+- Repeti    tion
 - Contrast
 - Alignment
 - Focal Point (visual hierarchy) cta- call to access
@@ -41,6 +41,7 @@ This tutorial assumes that you already have a static React site (Gatsby/Next) be
 
 ## specificity
 - over riding nature is called cascading (water flow --> real worlds example)
+- **When there is clash of style then which one does css pick is specificity**
 ### Don't use inline style 
 - 
 

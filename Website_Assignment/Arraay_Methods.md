@@ -385,3 +385,185 @@ No, not all Biography movies are above 8 ratings
 ```
 
 ---
+## Exercise 22  Movie Titles and Ratings Formatter
+Write a function that returns a string with each movie's title and its ratings joined by commas using array methods.
+
+### Answer
+
+```js
+const movies = [
+  {
+    id: 1,
+    title: "Baahubali",
+    director: "S. S. Rajamouli",
+    year: 2015,
+    ratings: [8, 9, 10],
+    genre: "Action",
+  },
+  {
+    id: 2,
+    title: "Arjun Reddy",
+    director: "Sandeep Reddy Vanga",
+    year: 2017,
+    ratings: [9, 8, 9],
+    genre: "Drama",
+  },
+  {
+    id: 3,
+    title: "Mahanati",
+    director: "Nag Ashwin",
+    year: 2018,
+    ratings: [10, 9, 8],
+    genre: "Biography",
+  },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that formats movie titles with their ratings
+const getTitlesAndRatings = (movies) => {
+  return movies.map(movie => movie.title +": "+movie.ratings).join(" | ")
+};
+// 1.1
+const getTitlesAndRatings1 = (movies) => 
+   movies.map(movie => movie.title +": "+movie.ratings).join(" | ")
+
+console.log(getTitlesAndRatings(movies));
+
+```
+### Expected Output:
+```js
+Baahubali: 8, 9, 10 | Arjun Reddy: 9, 8, 9 | Mahanati: 10, 9, 8
+```
+
+---
+
+## Exercise 23  Compile All Ratings
+Write a function that returns a single array containing all ratings of all movies using array methods.
+### Answer
+
+```js
+const movies = [
+  {
+    id: 1,
+    title: "Baahubali",
+    ratings: [8, 9, 10],
+  },
+  {
+    id: 2,
+    title: "Arjun Reddy",
+    ratings: [9, 8, 9],
+  },
+  {
+    id: 3,
+    title: "Mahanati",
+    ratings: [10, 9, 8],
+  },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that compiles all ratings into a single array
+const getTitlesAndRatings = (movies) => 
+   movies.reduce((acc, curr) => acc.concat(curr.ratings), []);
+
+console.log(JSON.stringify(getAllRatings(movies)));
+
+```
+### Expected Output:
+```js
+[8,9,10,9,8,9,10,9,8]
+```
+
+---
+## Exercise 24 Find High-Rated Movie Titles
+Write a function that returns an array of titles of movies that have ratings above a certain threshold using array methods.
+
+### Answer
+
+```js
+const movies = [
+  {
+    id: 1,
+    title: "Baahubali",
+    ratings: [8, 9, 10],
+  },
+  {
+    id: 2,
+    title: "Arjun Reddy",
+    ratings: [9, 8, 9],
+  },
+  {
+    id: 3,
+    title: "Mahanati",
+    ratings: [10, 9, 8],
+  },
+  {
+    id: 4,
+    title: "Eega",
+    ratings: [7, 8, 9],
+  },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds movie titles with high ratings
+const getTitlesWithHighRatings1 = (movies, threshold) => {
+  return movies
+    .filter(movie => movie.ratings.some(rating => rating >= threshold))
+    .map(movie => movie.title);
+};
+
+console.log(JSON.stringify(getTitlesWithHighRatings(movies, 9)));
+console.log(JSON.stringify(getTitlesWithHighRatings(movies, 10)));
+
+```
+### Expected Output:
+```js
+["Baahubali","Arjun Reddy","Mahanati","Eega"]
+["Baahubali","Mahanati"]
+```
+
+---
+## Exercise 25 Sort Movies by Average Rating
+Write a function that returns an array of movie titles sorted by their average ratings in descending order.
+
+### Answer
+
+```js
+const movies = [
+  {
+    title: "Baahubali",
+    ratings: [8, 9, 10],
+  },
+  {
+    title: "Arjun Reddy",
+    ratings: [9, 8, 9],
+  },
+  {
+    title: "Jersey",
+    ratings: [9, 9, 8],
+  },
+  {
+    title: "Mahanati",
+    ratings: [10, 9, 8],
+  },
+  {
+    title: "Eega",
+    ratings: [7, 8, 9],
+  },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that sorts movie titles by average rating
+const getTitlesSortedByAverageRating = (movies) => {
+  // Your code here
+  
+};
+
+console.log(JSON.stringify(getTitlesSortedByAverageRating(movies)));
+
+```
+### Expected Output:
+```js
+["Baahubali","Arjun Reddy","Jersey","Mahanati","Eega"]
+```
+
+---
