@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Plan</title>
+    <style>
+      body {
+        background-color: hsl(252, 33%, 97%);
+      }
+      :root {
+        --primary-clr: hsl(245.68deg 69.81% 20.78%);
+        --secondary-clr: hsl(261.08deg 100% 63.73%);
+        --accent-clr: hsl(261.82deg 100% 97.84%);
+        --primary-text-clr: black;
+        --secondary-text-clr: hsl(0deg 0% 76.47%);
+      }
+      .container {
+        display: flex;
+        background-color: hsl(252, 33%, 97%);
+        justify-content: space-evenly;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 30px;
+        > div {
+          background-color: white;
+          border-radius: 15px;
+          padding: 20px;
+          align-items: center;
+        }
+        ul {
+          padding: 0;
+        }
+        .box3 {
+          background-color: var(--primary-clr);
+          color: white;
+          /* margin: 10px; */
+          h2 {
+            color: white;
+          }
+          span {
+            color: white;
+          }
+          button {
+            background: var(--secondary-clr);
+            color: white;
+          }
+        }
+      }
+      .box1,
+      .box2,
+      .box3,
+      .box4 {
+        /* margin: 50px; */
+        h2 {
+          font-size: 40px;
+          color: var(--primary-clr);
+        }
+        ul > li {
+          font-size: 20px;
+        }
+        p {
+          font-size: 20px;
+          span {
+            font-size: 35px;
+            color: var(--primary-clr);
+          }
+        }
+      }
+      .box1 > ul {
+        & li:nth-child(1) {
+          color: var(--primary-text-clr);
+        }
+      }
+
+      li {
+        list-style: none;
+        padding: 0;
+      }
+      button {
+        width: 300px;
+        padding: 15px 50px;
+        border-radius: 10px;
+        font-size: 25px;
+        color: var(--secondary-clr);
+        /* color: var(--secondary-text-clr);
+             align-items: center; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">
+        <h2>Intro</h2>
+        <ul>
+          <li>✔ Upload Video up to 720p Resolution</li>
+          <li>✔ Attachment & Post Scheduling</li>
+          <li>✔ Set your rates</li>
+          <li>✔ Exclusive Deals</li>
+          <li>✔ Advanced Statistics</li>
+        </ul>
+        <p>$<span>234</span>/month</p>
+        <button>Choose</button>
+      </div>
+      <div class="box2">
+        <h2>Base</h2>
+        <ul>
+          <li>✔ Upload Video with HD Resolution</li>
+          <li>✔ Attachment & Post Scheduling</li>
+          <li>✔ Set your rates</li>
+          <li>✔ Exclusive Deals</li>
+          <li>✔ Advanced Statistics</li>
+        </ul>
+        <p>$<span>123</span>/month</p>
+        <button>Choose</button>
+      </div>
+      <div class="box3">
+        <h2>Pro</h2>
+        <ul>
+          <li>✔ Upload Video up to 720p Resolution</li>
+          <li>✔ Attachment & Post Scheduling</li>
+          <li>✔ Set your rates</li>
+          <li>✔ Exclusive Deals</li>
+          <li>✔ Advanced Statistics</li>
+        </ul>
+        <p>$<span>456</span>/month</p>
+        <button>Choose</button>
+      </div>
+      <div class="box4">
+        <h2>Enterprise</h2>
+        <ul>
+          <li>✔ Upload Video up to 720p Resolution</li>
+          <li>✔ Attachment & Post Scheduling</li>
+          <li>✔ Set your rates</li>
+          <li>✔ Exclusive Deals</li>
+          <li>✔ Advanced Statistics</li>
+        </ul>
+        <p>$<span>678 </span>/month</p>
+        <button>Choose</button>
+      </div>
+    </div>
+  </body>
+</html>
