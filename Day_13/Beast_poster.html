@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-bg-clr: hsl(2, 88%, 7%);
+        --primary-bg-clr: linear-gradient(
+          54deg,
+          #230604,
+          #3d1b17,
+          #593022,
+          #75472c,
+          #8f6135
+        );
+        --secondary-clr: hsl(2, 100%, 95%);
+        --accent-clr: hsl(2, 17%, 59%);
+        --heading-clr: hsl(0, 0%, 100%);
+
+        --ff-primary: Inter, sans-serif;
+        --ff-secondary: Poppins, sans-serif;
+
+        --fz-sm: 14px;
+        --fz-md: 16px;
+        --fz-xl: 36px;
+      }
+
+      body {
+        background: var(--primary-bg-clr);
+
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-content: center;
+      }
+
+      .poster-container {
+        width: 360px;
+        /* console.log */
+        /* outline: 2px solid white;  */
+        /* border: 2px solid white;  */
+      }
+
+      .poster-img {
+        height: 500px;
+        width: 100%;
+        object-fit: cover;
+
+        border-radius: 28px;
+      }
+
+      .poster-content-container {
+        text-align: center;
+        font-family: var(--ff-primary);
+        padding: 0px 16px;
+
+        h2 {
+          color: var(--heading-clr);
+          font-size: var(--fz-xl);
+          margin: 0px;
+        }
+
+        .poster-summary {
+          color: var(--secondary-clr);
+          font-family: var(--ff-secondary);
+          /* text-wrap: pretty; */
+        }
+
+        .poster-spec {
+          color: var(--accent-clr);
+          span {
+            color: var(--secondary-clr);
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="poster-container">
+      <img
+        src="https://www.mixindia.com/wp-content/uploads/2022/01/Beast-Tamil-Movie-Poster.jpg"
+        alt="Beast movie poster"
+        class="poster-img"
+      />
+      <div class="poster-content-container">
+        <h2 class="poster-title">Beast</h2>
+        <p class="poster-spec">
+          2022 <span>‧</span> Action/Dark comedy <span>‧</span> 2h 38m
+        </p>
+        <p class="poster-summary">
+          Beast is an upcoming Indian Tamil-language action thriller film
+          written and directed by Nelson and produced by Sun Pictures. The film
+          stars Vijay and Pooja Hegde, while Selvaraghavan, Yogi Babu and Redin
+          Kingsley play supporting roles.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
