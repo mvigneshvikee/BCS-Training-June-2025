@@ -4,12 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Website Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      :root {
+        --soft-orange: hsl(35, 77%, 62%);
+        --soft-red: hsl(5, 85%, 63%);
+        --Off-white: hsl(36, 100%, 99%);
+        --Grayish-blue: hsl(233, 8%, 79%);
+        --Dark-grayish-blue: hsl(236, 13%, 42%);
+        --Very-dark-blue: hsl(240, 100%, 5%);
+        --ff-inter: "Inter", sans-serif;
+      }
       header {
         display: flex;
         max-width: 1440px;
-        margin: 0 auto;
-
+        margin: 20px auto;
         justify-content: space-between;
         img {
           /* flex-grow: 1; */
@@ -18,7 +32,9 @@
           display: flex;
           list-style: none;
           justify-content: space-around;
-          gap: 40px;
+          gap: 60px;
+          font-family: var(--ff-inter);
+          color: var(--Grayish-blue);
           /* flex-grow: 1; */
         }
       }
@@ -27,17 +43,78 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         max-width: 1440px;
-        margin: 0 auto;
+        margin: 15px auto;
         .bright {
           display: grid;
           grid-template-columns: 1fr 1fr;
+          font-family: var(--ff-inter);
+          padding: 10px 0;
+          h2 {
+            font-size: 67px;
+          }
+          .para-button {
+            display: grid;
+            justify-content: space-between;
+            font-size: 20px;
+            p {
+              line-height: 30px;
+            }
+            button {
+              font-size: 20px;
+              width: 300px;
+              height: 70px;
+              background-color: var(--soft-red);
+            }
+          }
+        }
+        .column-2-new {
+          background-color: var(--Very-dark-blue);
+          font-family: var(--ff-inter);
+          padding: 30px;
+          h1 {
+            font-size: 50px;
+            color: var(--soft-orange);
+          }
+          h2 {
+            color: var(--Off-white);
+          }
+          p {
+            color: var(--Grayish-blue);
+          }
+          hr {
+            color: var(--Grayish-blue);
+          }
         }
       }
       .last-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1440px;
+        margin: 15px auto;
+        height: 150px;
+        font-family: var(--ff-inter);
         .box1 {
           display: flex;
+          gap: 10px;
+          h2 {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--soft-red);
+          }
+          h3 {
+            font-size: 20px;
+            font-weight: 700;
+
+            color: var(--Very-dark-blue);
+          }
+          p {
+            color: var(--Grayish-blue);
+            line-height: 30px;
+          }
+        }
+        .box-content {
+          display: grid;
+          justify-content: space-between;
         }
       }
       .img-puzzle {
