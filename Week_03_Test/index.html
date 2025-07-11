@@ -128,6 +128,36 @@
           width: 625px;
         }
       }
+      @media (max-width: 768px) {
+        /* header {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        } */
+
+        /* header ul {
+          flex-direction: column;
+          gap: 15px;
+        } */
+
+        .card-container {
+          grid-template-columns: 1fr;
+          padding: 20px;
+          .bright {
+            grid-template-columns: 1fr;
+            align-items: center;
+            text-align: center;
+          }
+        }
+        .last-container {
+          grid-template-columns: 1fr;
+          padding: 20px;
+          .box1 {
+            display: grid;
+            grid-template-columns: 1fr;
+          }
+        }
+      }
     </style>
   </head>
   <body>
@@ -209,42 +239,9 @@
         <header>
           <img style="width: 370px" src="./assets/logo.svg" alt="" />
           <ul>
-            <li>Home</li>
-            <li>New</li>
-            <li>Popular</li>
-            <li>Trending</li>
-            <li>Categories</li>
+            <li></li>
           </ul>
         </header>
-        <img
-          class="img-puzzle"
-          src="./assets/image-web-3-desktop.jpg"
-          alt="image-web-3-desktop"
-        />
-        <h2>The Bright Future of Web 3.0?</h2>
-        <p>
-          We dive into the next evolution of the web that claims to put the
-          power of the platforms back into the hands of the people. But is it
-          really fulfilling its promise?
-        </p>
-        <button>Read more</button>
-        <div class="column-2-new">
-          <h1>New</h1>
-          <h2>Hydrogen VS Electric Cars</h2>
-          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-          <hr />
-          <h2>The Downsides of AI Artistry</h2>
-          <p>
-            What are the possible adverse effects of on-demand AI image
-            generation?
-          </p>
-          <hr />
-          <h2>Is VC Funding Drying Up?</h2>
-          <p>
-            Private funding by VC firms is down 50% YOY. We take a look at what
-            that means.
-          </p>
-        </div>
       </div>
     </div>
   </body>
