@@ -36,6 +36,9 @@
           font-family: var(--ff-inter);
           color: var(--Grayish-blue);
           /* flex-grow: 1; */
+          li:hover {
+            color: var(--soft-red);
+          }
         }
       }
 
@@ -66,6 +69,10 @@
               height: 70px;
               background-color: var(--soft-red);
             }
+            button:hover {
+              background-color: var(--Very-dark-blue);
+              color: var(--Off-white);
+            }
           }
         }
         .column-2-new {
@@ -86,6 +93,9 @@
             color: var(--Grayish-blue);
           }
         }
+      }
+      .column-2-new > h2:hover {
+        color: var(--soft-orange);
       }
       .last-container {
         display: grid;
@@ -126,36 +136,6 @@
         max-width: 375px;
         img {
           width: 625px;
-        }
-      }
-      @media (max-width: 768px) {
-        /* header {
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-        } */
-
-        /* header ul {
-          flex-direction: column;
-          gap: 15px;
-        } */
-
-        .card-container {
-          grid-template-columns: 1fr;
-          padding: 20px;
-          .bright {
-            grid-template-columns: 1fr;
-            align-items: center;
-            text-align: center;
-          }
-        }
-        .last-container {
-          grid-template-columns: 1fr;
-          padding: 20px;
-          .box1 {
-            display: grid;
-            grid-template-columns: 1fr;
-          }
         }
       }
     </style>
@@ -234,14 +214,6 @@
             <p>How the pandemic has sparked fresh opportunities.</p>
           </div>
         </div>
-      </div>
-      <div class="mobile-view">
-        <header>
-          <img style="width: 370px" src="./assets/logo.svg" alt="" />
-          <ul>
-            <li></li>
-          </ul>
-        </header>
       </div>
     </div>
   </body>
