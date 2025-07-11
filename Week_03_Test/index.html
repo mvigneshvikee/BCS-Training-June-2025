@@ -58,6 +58,7 @@
             font-size: 20px;
             p {
               line-height: 30px;
+              color: var(--Grayish-blue);
             }
             button {
               font-size: 20px;
@@ -90,15 +91,16 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         max-width: 1440px;
-        margin: 15px auto;
-        height: 150px;
+        margin: 25px auto;
+        /* height: 150px; */
         font-family: var(--ff-inter);
         .box1 {
           display: flex;
           gap: 10px;
+          height: 260px;
           h2 {
             font-size: 40px;
-            font-weight: 900;
+            font-weight: 700;
             color: var(--soft-red);
           }
           h3 {
@@ -120,79 +122,128 @@
       .img-puzzle {
         width: 950px;
       }
+      .mobile-view {
+        max-width: 375px;
+        img {
+          width: 625px;
+        }
+      }
     </style>
   </head>
   <body>
-    <header>
-      <img src="./assets/logo.svg" alt="" />
-      <ul>
-        <li>Home</li>
-        <li>New</li>
-        <li>Popular</li>
-        <li>Trending</li>
-        <li>Categories</li>
-      </ul>
-    </header>
-    <div class="card-container">
-      <div class="column-1">
+    <div class="webcard">
+      <header>
+        <img src="./assets/logo.svg" alt="" />
+        <ul>
+          <li>Home</li>
+          <li>New</li>
+          <li>Popular</li>
+          <li>Trending</li>
+          <li>Categories</li>
+        </ul>
+      </header>
+      <div class="card-container">
+        <div class="column-1">
+          <img
+            class="img-puzzle"
+            src="./assets/image-web-3-desktop.jpg"
+            alt="image-web-3-desktop"
+          />
+          <div class="bright">
+            <h2>The Bright Future of Web 3.0?</h2>
+            <div class="para-button">
+              <p>
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <button>Read more</button>
+            </div>
+          </div>
+        </div>
+        <div class="column-2-new">
+          <h1>New</h1>
+          <h2>Hydrogen VS Electric Cars</h2>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+          <hr />
+          <h2>The Downsides of AI Artistry</h2>
+          <p>
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+          <hr />
+          <h2>Is VC Funding Drying Up?</h2>
+          <p>
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
+        </div>
+      </div>
+      <div class="last-container">
+        <div class="box1">
+          <img src="./assets/image-retro-pcs.jpg" alt="" />
+          <div class="box-content">
+            <h2>01</h2>
+            <h3>Reviving Retro PCs</h3>
+            <p>What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+        <div class="box1">
+          <img src="./assets/image-top-laptops.jpg" alt="" />
+          <div class="box-content">
+            <h2>02</h2>
+            <h3>Top 10 Laptops of 2022</h3>
+            <p>Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+        <div class="box1">
+          <img src="./assets/image-gaming-growth.jpg" alt="" />
+          <div class="box-content">
+            <h2>03</h2>
+            <h3>The Growth of Gaming</h3>
+            <p>How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-view">
+        <header>
+          <img style="width: 370px" src="./assets/logo.svg" alt="" />
+          <ul>
+            <li>Home</li>
+            <li>New</li>
+            <li>Popular</li>
+            <li>Trending</li>
+            <li>Categories</li>
+          </ul>
+        </header>
         <img
           class="img-puzzle"
           src="./assets/image-web-3-desktop.jpg"
           alt="image-web-3-desktop"
         />
-        <div class="bright">
-          <h2>The Bright Future of Web 3.0?</h2>
-          <div class="para-button">
-            <p>
-              We dive into the next evolution of the web that claims to put the
-              power of the platforms back into the hands of the people. But is
-              it really fulfilling its promise?
-            </p>
-            <button>Read more</button>
-          </div>
-        </div>
-      </div>
-      <div class="column-2-new">
-        <h1>New</h1>
-        <h2>Hydrogen VS Electric Cars</h2>
-        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-        <hr />
-        <h2>The Downsides of AI Artistry</h2>
+        <h2>The Bright Future of Web 3.0?</h2>
         <p>
-          What are the possible adverse effects of on-demand AI image
-          generation?
+          We dive into the next evolution of the web that claims to put the
+          power of the platforms back into the hands of the people. But is it
+          really fulfilling its promise?
         </p>
-        <hr />
-        <h2>Is VC Funding Drying Up?</h2>
-        <p>
-          Private funding by VC firms is down 50% YOY. We take a look at what
-          that means.
-        </p>
-      </div>
-    </div>
-    <div class="last-container">
-      <div class="box1">
-        <img src="./assets/image-retro-pcs.jpg" alt="" />
-        <div class="box-content">
-          <h2>01</h2>
-          <h3>Reviving Retro PCs</h3>
-          <p>What happens when old PCs are given modern upgrades?</p>
-        </div>
-      </div>
-      <div class="box1">
-        <img src="./assets/image-top-laptops.jpg" alt="" />
-        <div class="box-content">
-          <h2>02</h2>
-          <h3>Top 10 Laptops of 2022</h3>
-          <p>Our best picks for various needs and budgets.</p>
-        </div>
-      </div>
-      <div class="box1">
-        <img src="./assets/image-gaming-growth.jpg" alt="" />
-        <div class="box-content">
-          <h2>03</h2>
-          <h3>The Growth of Gaming</h3>
-          <p>How the pandemic has sparked fresh opportunities.</p>
+        <button>Read more</button>
+        <div class="column-2-new">
+          <h1>New</h1>
+          <h2>Hydrogen VS Electric Cars</h2>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+          <hr />
+          <h2>The Downsides of AI Artistry</h2>
+          <p>
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+          <hr />
+          <h2>Is VC Funding Drying Up?</h2>
+          <p>
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
         </div>
       </div>
     </div>
