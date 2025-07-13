@@ -710,3 +710,88 @@ console.log(getTotalRatingsByGenre(movies, "Drama"));
 ```
 
 ---
+
+## Exercise 28 Find Movies with High Average Ratings
+
+Write a function that returns an array of movies where the average rating is above a certain value, including the average rating in the result.
+
+### Answer
+
+```js
+const movies = [
+  { id: 1, title: "Baahubali", ratings: [8, 9, 10] },
+  { id: 2, title: "Arjun Reddy", ratings: [9, 8, 9] },
+  { id: 3, title: "Mahanati", ratings: [10, 9, 8] },
+  { id: 4, title: "Eega", ratings: [7, 8, 9] },
+  { id: 5, title: "Jersey", ratings: [9, 9, 8] },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds movies with high average ratings
+const getMoviesWithHighAverageRating = (movies, threshold) => {
+  const fiterMovie = movies.filter((movie) => {
+    const avg = movie.ratings.reduce((a, b) => a + b, 0) / movie.ratings.length;
+    return avg >= threshold;
+  });
+  const avgMovie = fiterMovie.map((movie) => {
+    const avg = movie.ratings.reduce((a, b) => a + b, 0) / movie.ratings.length;
+    return `${movie.title} has an average rating of ${avg.toFixed(2)}`;
+  });
+  return avgMovie;
+};
+
+console.log(JSON.stringify(getMoviesWithHighAverageRating(movies, 8.5)));
+```
+
+### Expected Output:
+
+```js
+[
+  "Baahubali has an average rating of 9.00",
+  "Arjun Reddy has an average rating of 8.67",
+  "Jersey has an average rating of 8.67",
+];
+```
+
+---
+
+## Exercise 29 Find Movies by Director Sorted by Year
+
+Write a function that returns an array of movie titles directed by a specific director, sorted by year in ascending order.
+
+### Answer
+
+```js
+const movies = [
+  { id: 1, title: "Baahubali", director: "S. S. Rajamouli", year: 2015 },
+  { id: 2, title: "Arjun Reddy", director: "Sandeep Reddy Vanga", year: 2017 },
+  { id: 3, title: "Mahanati", director: "Nag Ashwin", year: 2018 },
+  { id: 4, title: "Eega", director: "S. S. Rajamouli", year: 2012 },
+  { id: 5, title: "Jersey", director: "Gowtam Tinnanuri", year: 2019 },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds movies by director sorted by year
+const getTitlesByDirectorSortedByYear = (movies, director) => {
+  const filteredMovie = movies
+    .filter((movie) => movie.director == director)
+    .sort((a, b) => a.year - b.year);
+  const movieTitle = filteredMovie.map((movie) => movie.title);
+  return movieTitle;
+};
+
+console.log(
+  JSON.stringify(getTitlesByDirectorSortedByYear(movies, "S. S. Rajamouli"))
+);
+console.log(
+  JSON.stringify(getTitlesByDirectorSortedByYear(movies, "Nag Ashwin"))
+);
+```
+
+### Expected Output:
+
+```js
+["Eega", "Baahubali"]["Mahanati"];
+```
+
+---

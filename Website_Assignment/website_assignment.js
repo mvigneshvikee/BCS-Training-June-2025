@@ -437,7 +437,7 @@ const getTotalRatingsByGenre = (movies, genre) => {
 //==============================
 
 //  exercise 28
-const movies = [
+const movies6 = [
   { id: 1, title: "Baahubali", ratings: [8, 9, 10] },
   { id: 2, title: "Arjun Reddy", ratings: [9, 8, 9] },
   { id: 3, title: "Mahanati", ratings: [10, 9, 8] },
@@ -459,4 +459,33 @@ const getMoviesWithHighAverageRating = (movies, threshold) => {
   return avgMovie;
 };
 
-console.log(JSON.stringify(getMoviesWithHighAverageRating(movies, 8.5)));
+// console.log(JSON.stringify(getMoviesWithHighAverageRating(movies, 8.5)));
+
+//==========================================
+
+// exercise  29
+
+const movies = [
+  { id: 1, title: "Baahubali", director: "S. S. Rajamouli", year: 2015 },
+  { id: 2, title: "Arjun Reddy", director: "Sandeep Reddy Vanga", year: 2017 },
+  { id: 3, title: "Mahanati", director: "Nag Ashwin", year: 2018 },
+  { id: 4, title: "Eega", director: "S. S. Rajamouli", year: 2012 },
+  { id: 5, title: "Jersey", director: "Gowtam Tinnanuri", year: 2019 },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds movies by director sorted by year
+const getTitlesByDirectorSortedByYear = (movies, director) => {
+  const filteredMovie = movies
+    .filter((movie) => movie.director == director)
+    .sort((a, b) => a.year - b.year);
+  const movieTitle = filteredMovie.map((movie) => movie.title);
+  return movieTitle;
+};
+
+console.log(
+  JSON.stringify(getTitlesByDirectorSortedByYear(movies, "S. S. Rajamouli"))
+);
+console.log(
+  JSON.stringify(getTitlesByDirectorSortedByYear(movies, "Nag Ashwin"))
+);
