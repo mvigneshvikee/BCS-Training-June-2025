@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #quote {
+        color: pini;
+      }
+
+      .container > h1 {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Super Awesome</h1>
+    <div class="container">
+      <h1>Waiting for next Spider-man Homecoming</h1>
+      <h1>Superman movie was Meh!!</h1>
+    </div>
+
+    <!-- Task 2.1 -->
+    <h2>Hobbies</h2>
+    <ul class="listItems"></ul>
+
+    <p class="msg">This is cool</p>
+    <h3 class="msg">Welcome to BCS!!!</h3>
+
+    <p id="quote">No pain No gain</p>
+
+    <script>
+      console.log(document);
+      //   Accessing DOM via JS
+      const reviews = document.getElementsByTagName("h1"); // Read
+
+      //   Read
+      console.log(reviews); // HTML Collection
+      console.log(reviews[0].innerText);
+      console.log(reviews[1].innerText);
+
+      //   Update
+      reviews[0].innerText = reviews[0].innerText.toUpperCase();
+
+      // Task 1.1 - Make all upper case
+      // Output
+      // WAITING FOR NEXT SPIDER-MAN HOMECOMING
+
+      // Task 1.2 - Add !! to all end of words
+      // Clue: split
+      // Output
+      // WAITING!! FOR!! NEXT!! SPIDER-MAN!! HOMECOMING!!
+
+      reviews[0].innerText = reviews[0].innerText.split(" ").join("!! ") + "!!";
+
+      //   Read
+
+      const msgs = document.getElementsByClassName("msg");
+      msgs[1].innerText = "Hi Guys!!!";
+      console.log(msgs);
+
+      console.log(document.getElementById("quote").innerText);
+
+      // Read (HTML Collection)
+      // 1. document.getElementsByTagName
+      // 2. document.getElementsByClassName
+      // 3. document.getElementById
+
+      //     console.log(document.querySelector("CSS Selector").innerText);
+      console.log(document.querySelector("#quote").innerText);
+
+      //   NodeList
+      console.log(document.querySelectorAll(".msg")[0].innerText);
+      console.log(document.querySelectorAll("h1")[1].innerText);
+
+      console.log(document.querySelectorAll(".container > h1"));
+
+      const headingInContainer = document.querySelectorAll(".container > h1");
+      console.log(headingInContainer[0].innerText);
+
+      console.log(document.querySelector("h1").innerText);
+
+      //   Adding an <p> to div.container
+
+      // Create
+      const para1 = document.createElement("p");
+      para1.innerText = "Make hay while the sun shines";
+
+      //   document.body.append(para1);
+
+      const quoteContainer = document.querySelector(".container");
+      quoteContainer.append(para1);
+
+      const hobbies = [
+        "📚 Reading",
+        "🎨 Painting",
+        "📸 Photography",
+        "🥾 Hiking",
+        "🌱 Gardening",
+        "👨‍🍳 Cooking",
+        "🎶 Playing musical instruments",
+        "💃 Dancing",
+        "✈️ Traveling",
+        "🧶 Knitting",
+      ];
+      //   listItems.join(",");
+      for (let hobbi of hobbies) {
+        const listItems = document.createElement("li");
+        listItems.innerText = hobbi;
+        document.querySelector(".listItems").append(listItems);
+        // listContainer.append(listItems);
+      }
+    </script>
+  </body>
+</html>

@@ -61,5 +61,19 @@
 
 ### picture element in html
 
-- box-sizing: content
-- box-sizing: border
+### Box-sizing
+
+- box-sizing: content =>content to content. must content space then adding additional padding and border width
+- box-sizing: border => border to border width. if you giving padding value content space will be shared.
+-
+
+## DOM
+
+- HTML pharse and css pharse
+- html pharse converts html code into DOM
+- getElementByTagName, ClassName, Id these are all returns HTML collecion
+- querySelectorAll -> always return NodeList ==> it is used to select multiple class
+- querySelector  --> it is used to select single element for example using id. incase if you giving class it select first class element only.
+- 
+
+- backward compatibility
