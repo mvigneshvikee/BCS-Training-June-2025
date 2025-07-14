@@ -493,7 +493,7 @@ const getTitlesByDirectorSortedByYear = (movies, director) => {
 //======================================
 
 // exercise 30
-const movies = [
+const movies22 = [
   { id: 1, title: "Baahubali", year: 2015, ratings: [8, 9, 10] },
   { id: 2, title: "Arjun Reddy", year: 2017, ratings: [9, 8, 9] },
   { id: 3, title: "Mahanati", year: 2018, ratings: [10, 9, 8] },
@@ -521,17 +521,41 @@ const getAverageRatingByYear1 = (movies, year) => {
 const getAverageRatingByYear = (movies, year) => {
   const movieFilter = movies.filter((movie) => movie.year === year);
 
-  if (!movieFilter) {
+  if (movieFilter.length === 0) {
     return "No movies released in the specified year";
+  } else {
+    const avg = movieFilter.map(
+      (movie) => movie.ratings.reduce((a, b) => a + b, 0) / movie.ratings.length
+    );
+    // console.log(avg);
+
+    return avg[0].toFixed(2);
   }
-
-  const avg = movieFilter.map(
-    (movie) => movie.ratings.reduce((a, b) => a + b, 0) / movie.ratings.length
-  );
-  console.log(avg);
-
-  return avg; //.toFixed(2);
 };
 
-console.log(getAverageRatingByYear(movies, 2018));
-console.log(getAverageRatingByYear(movies, 2020));
+// console.log(getAverageRatingByYear(movies, 2018));
+// console.log(getAverageRatingByYear(movies, 2020));
+
+// ====================================================
+
+// exercise 31
+
+const movies = [
+  { id: 1, title: "Baahubali", ratings: [8, 9, 10] },
+  { id: 2, title: "Arjun Reddy", ratings: [9, 8, 9] },
+  { id: 3, title: "Mahanati", ratings: [10, 9, 8] },
+  { id: 4, title: "Eega", ratings: [7, 8, 9] },
+  { id: 5, title: "Jersey", ratings: [9, 9, 8] },
+];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that finds highest rating for each movie
+const getMoviesWithHighestRatings = (movies) => {
+  const movie = movies.map((movie) => ({
+    title: movie.title,
+    highestRating: Math.max(...movie.ratings),
+  }));
+  return movie;
+};
+
+console.log(JSON.stringify(getMoviesWithHighestRatings(movies)));
