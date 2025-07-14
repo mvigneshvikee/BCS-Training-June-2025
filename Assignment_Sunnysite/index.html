@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sunnyside</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-grapic-clr: hsl(168, 77%, 15%);
+        --footer-clr: hsl(167, 34%, 41%);
+        --red: hsl(7, 99%, 70%);
+        --yellow: hsl(51, 100%, 49%);
+        --secondary-photo-clr: hsl(197, 80%, 15%);
+        --secondary-txt-clr: hsl(212, 88%, 7%);
+        --accent-txt-clr: hsl(0, 100%, 100%);
+        --grey-600: hsl(213, 9%, 39%);
+        --grey-550: hsl(232, 10%, 55%);
+        --ff-Barlow: "Barlow", sans-serif;
+        --ff-Fraunces: "Fraunces", serif;
+      }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        justify-content: center;
+      }
+      .top-container {
+        position: relative;
+        text-align: center;
+        color: white;
+        width: 375px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          margin-bottom: 0px;
+        }
+      }
+
+      .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        margin: 0px;
+        color: var(--accent-txt-clr);
+        font-family: var(--ff-Barlow);
+        font-weight: 700;
+        font-size: 30px;
+      }
+
+      .top-right {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        margin: 0px;
+        color: var(--accent-txt-clr);
+        font-family: var(--ff-Barlow);
+        font-weight: 700;
+        font-size: 30px;
+      }
+
+      .centered {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0px;
+        color: var(--accent-txt-clr);
+        font-family: var(--ff-Fraunces);
+        font-size: 45px;
+        font-weight: 900;
+        letter-spacing: 6px;
+      }
+      .arrow {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0px;
+        color: var(--accent-txt-clr);
+        font-family: var(--ff-Fraunces);
+        font-size: 120px;
+        font-weight: 900;
+        letter-spacing: 6px;
+      }
+      .middle-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content: center;
+        width: 375px;
+        margin: 0px;
+        /* outline: 2px solid black; */
+        img {
+          width: 100%;
+        }
+        .text {
+          padding: 30px;
+          text-align: center;
+          font-family: var(--ff-Barlow);
+          h2,
+          h3 {
+            font-family: var(--ff-Fraunces);
+            font-weight: 900;
+          }
+          h2 {
+            font-size: 30px;
+          }
+          p {
+            color: var(--gray-900);
+            line-height: 1.6;
+          }
+          .yellow {
+            text-decoration-line: underline;
+            text-decoration-color: var(--yellow);
+          }
+          .red {
+            text-decoration-line: underline;
+            text-decoration-color: var(--red);
+          }
+        }
+      }
+      .lower-container {
+        position: relative;
+        text-align: center;
+        color: black;
+        width: 375px;
+        margin: 0;
+        padding: 0;
+        /* outline: 2px solid blueviolet; */
+        img {
+          width: 100%;
+          margin-bottom: 0px;
+        }
+        .lower-center1 {
+          position: absolute;
+          /* bottom: 10px; */
+          top: 230px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          /* justify-content: center; */
+          margin: 0px;
+          h2 {
+            font-family: var(--ff-Fraunces);
+            color: var(--primary-grapic-clr);
+            font-weight: 700;
+            font-size: 25.5x;
+          }
+          p {
+            font-family: var(--ff-Barlow);
+            color: var(--primary-grapic-clr);
+            font-weight: 600;
+          }
+        }
+        .lower-center2 {
+          position: absolute;
+          bottom: -94px;
+          /* top: 230px; */
+          left: 50%;
+          transform: translate(-50%, -50%);
+          /* justify-content: center; */
+          margin: 0px;
+          h2 {
+            font-family: var(--ff-Fraunces);
+            color: var(--secondary-photo-clr);
+            font-weight: 700;
+            font-size: 25.5x;
+          }
+          p {
+            font-family: var(--ff-Barlow);
+            color: var(--secondary-photo-clr);
+            font-weight: 600;
+          }
+        }
+      }
+      .clients {
+        width: 375px;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        h2 {
+          font-family: var(--ff-Fraunces);
+          color: var(--grey-550);
+          letter-spacing: 3px;
+        }
+
+        .client {
+          margin-bottom: 30px;
+          justify-items: center;
+          display: grid;
+          img {
+            border-radius: 50%;
+          }
+          h3 {
+            margin: 0;
+            padding: 0;
+            font-family: var(--ff-Fraunces);
+            font-weight: 700;
+            color: var(--secondary-txt-clr);
+          }
+          p {
+            font-family: var(--ff-Barlow);
+            color: var(--gray-900);
+            padding: 20px;
+            text-align: center;
+            line-height: 25px;
+          }
+          .position {
+            font-family: var(--ff-Barlow);
+            color: var(--grey-550);
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+      .dishes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 375px;
+
+        img {
+          width: 100%;
+        }
+      }
+      footer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: hsl(167, 44%, 70%);
+        max-width: 375px;
+        height: 200px;
+        padding: 30px;
+        font-family: var(--ff-Barlow);
+
+        h1 {
+          color: hsl(168, 73%, 24%);
+          font-weight: 900;
+        }
+        .services {
+          display: flex;
+          flex-grow: 2;
+          justify-content: space-between;
+          padding: 0;
+
+          li {
+            list-style: none;
+            color: hsl(168, 71%, 28%);
+            font-weight: bold;
+          }
+        }
+        .icons {
+          display: flex;
+          /* max-width: 375px; */
+          gap: 30px;
+          margin: 0 auto;
+          justify-content: space-around;
+          padding: 0;
+
+          li {
+            list-style: none;
+            color: hsl(168, 73%, 24%);
+            font-weight: bold;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-container">
+      <img src="images/mobile/image-header.jpg" alt="Snow" />
+      <div class="top-left">sunnyside</div>
+      <div class="top-right"><i class="fa-solid fa-bars"></i></div>
+      <div class="centered">WE ARE CREATIVES</div>
+      <div class="arrow">↓</div>
+    </div>
+    <div class="middle-images">
+      <img src="images/desktop/image-transform.jpg" alt="image-transform" />
+      <div class="text">
+        <h2>Transform your brand</h2>
+        <p>
+          We are a full-service creative agency specializing in helping brands
+          grow fast. Engage your clients through compelling visuals that do most
+          of the marketing for you.
+        </p>
+        <h3 class="yellow">LEARN MORE</h3>
+      </div>
+      <img src="images/desktop/image-stand-out.jpg" alt="image-transform" />
+      <div class="text">
+        <h2>Stand out to the right audience</h2>
+        <p>
+          Using a collaborative formula of designers, researchers,
+          photographers, videographers, and copywriters, we’ll build and extend
+          your brand in digital places
+        </p>
+        <h3 class="red">LEARN MORE</h3>
+      </div>
+    </div>
+    <div class="lower-container">
+      <div class="lower-image">
+        <img src="images/desktop/image-graphic-design.jpg" alt="Snow" />
+        <div class="lower-center1">
+          <h2>Graphic Design</h2>
+
+          <p>
+            Great design makes you memorable. We deliver artwork that
+            underscores your brand message and captures potential clients’
+            attention.
+          </p>
+        </div>
+      </div>
+      <div class="lower-image">
+        <img src="images/desktop/image-photography.jpg" alt="Snow" />
+        <div class="lower-center2">
+          <h2>Photography</h2>
+          <p>
+            Increase your credibility by getting the most stunning, high-quality
+            photos that improve your business image.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="clients">
+      <div><h2>CLIENT TESTIMONIALS</h2></div>
+      <div class="client">
+        <img src="./images/image-emily.jpg" alt="" />
+        <p>
+          We put our trust in Sunnyside and they delivered, making sure our
+          needs were met and deadlines were always hit
+        </p>
+        <h3>Emily R.</h3>
+        <p class="position">Marketing Director</p>
+      </div>
+      <div class="client">
+        <img src="./images/image-thomas.jpg" alt="" />
+        <p>
+          Sunnyside’s enthusiasm coupled with their keen interest in our brand’s
+          success made it a satisfying and enjoyable experience.
+        </p>
+        <h3>Thomas S.</h3>
+        <p class="position">Cheif Operating Officer</p>
+      </div>
+      <div class="client">
+        <img src="./images/image-jennie.jpg" alt="" />
+        <p>
+          Incredible end result! Our sales increased over 400% when we worked
+          with Sunnyside. Highly recommended!
+        </p>
+        <h3>Jennie F.</h3>
+        <p class="position">Business Owner</p>
+      </div>
+    </div>
+    <div class="dishes">
+      <img src="images/desktop/image-gallery-milkbottles.jpg" alt="" />
+      <img src="images/desktop/image-gallery-orange.jpg" alt="" />
+      <img src="images/desktop/image-gallery-cone.jpg" alt="" />
+      <img src="images/desktop/image-gallery-sugarcubes.jpg" alt="" />
+    </div>
+    <footer>
+      <h1>sunnyside</h1>
+      <ul class="services">
+        <li>About</li>
+        <li>Service</li>
+        <li>Projects</li>
+      </ul>
+      <ul class="icons">
+        <li><i class="fa-brands fa-square-facebook"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-twitter"></i></li>
+        <li><i class="fa-brands fa-pinterest"></i></li>
+      </ul>
+    </footer>
+  </body>
+</html>
