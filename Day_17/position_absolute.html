@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlap</title>
+  </head>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-content: center;
+    }
+    .overlap {
+      position: relative;
+      img {
+        border-radius: 70px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        /* display: inline; */
+        width: 30px;
+        aspect-ratio: 1 /1;
+        /* padding: 10px; */
+        color: white;
+        border-radius: 50px;
+        position: absolute;
+        top: -24px;
+        left: 107px;
+      }
+    }
+  </style>
+  <body>
+    <h2>hello</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi ut,
+      unde pariatur voluptatum sequi in velit voluptatibus error minima eaque
+      labore quo nobis sunt odio corrupti repellendus mollitia ea cupiditate.
+    </p>
+    <div class="overlap">
+      <img src="image-thomas.jpg" alt="" />
+      <h3>8</h3>
+    </div>
+  </body>
+</html>
