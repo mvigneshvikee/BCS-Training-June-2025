@@ -18,7 +18,7 @@
 
 ### Grid RAM (Repeat, Auto-fit, MinMax ) => mnemonic Technic
 
-- grid-template-column: repeat(auto-fit, minmax(200px, 1fr=))
+- grid-template-column: repeat(auto-fit, minmax(200px, 1fr))
 
 #### Bootstrap creates from Twitter
 
