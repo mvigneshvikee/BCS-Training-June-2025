@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide Show</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-content: center;
+      }
+      .slideContainer {
+        width: 700px;
+        height: 400px;
+        object-fit: cover;
+        > .sideArrow {
+          height: 400px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          > button {
+            width: 70px;
+            height: 400px;
+          }
+        }
+        > .bottomDots {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          > button {
+            padding: 5px;
+            border-radius: 50%;
+          }
+          > button:active {
+            background-color: black;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="slideContainer"
+      class="slideContainer"
+      onmouseover="handleMouseOver()"
+      onmouseout="handleMouseOut()"
+    >
+      <div class="sideArrow">
+        <button onclick="leftArrow()">
+          <i class="fa-solid fa-less-than"></i>
+        </button>
+        <button onclick="rightArrow()">
+          <i class="fa-solid fa-greater-than"></i>
+        </button>
+      </div>
+      <div class="bottomDots">
+        <button id="btn-1" onclick="firstImage()">
+          <i class="fa-solid-1 fa-circle"></i>
+        </button>
+        <button id="btn-2" onclick="secondImage()">
+          <i class="fa-solid-2 fa-circle"></i>
+        </button>
+        <button id="btn-3" onclick="thirdImage()">
+          <i class="fa-solid-3 fa-circle"></i>
+        </button>
+        <button id="btn-4" onclick="forthImage()">
+          <i class="fa-solid-4 fa-circle"></i>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const images = [
+        "https://media.istockphoto.com/id/1438032979/photo/empty-wooden-table-with-blurred-view-of-scandinavian-living-room.jpg?s=612x612&w=0&k=20&c=Zkr_7e27x6a_BEGUE4dVon2v_BxS9rHb0fYOzij4xpw=",
+        "https://media.istockphoto.com/id/1342704371/photo/mockup-tablet-with-magic-keyboard-on-wooden-tablet-in-dark-tone-office-room.jpg?s=612x612&w=0&k=20&c=PkHMNytRKS-9fQtFB_630LxD6Ijk0JZtM5TnguYhYLA=",
+        "https://media.istockphoto.com/id/1458698228/photo/selective-focus-wood-table-top-on-blur-kitchen-counter-background.jpg?s=612x612&w=0&k=20&c=Lz3Ry_4fcYgymHz_jh51xCX0vWnY2dWDETEUa72HE0w=",
+        "https://media.istockphoto.com/id/1354848291/photo/shot-of-a-laptop-in-an-empty-office.jpg?s=612x612&w=0&k=20&c=cuuiC2va7LYFGFjDbPru9pUE_e3vsjKGWE5OWC8h5Gc=",
+      ];
+      //   const slideContainer = document.getElementById("slideContainer");
+      const slideContainer =
+        document.getElementsByClassName("slideContainer")[0];
+      // const imgs = document.createElement("img")
+      let imgIndex = 0;
+      let intervalSlide;
+      function startSlide() {
+        intervalSlide = setInterval(() => {
+          //      Using normal style flow
+          // slideContainer.style.backgroundImage = `url('${images[imgIndex]}')`;
+
+          //         Using setAttribute
+          slideContainer.setAttribute(
+            "style",
+            `background-image: url('${images[imgIndex]}')`
+          );
+          console.log(
+            `imgindex value: ${imgIndex} and image of index${images[imgIndex]} `
+          );
+
+          // slideContainer.innerHTML = `<img src =${images[imgIndex]} alt=""/>`;
+          imgIndex = (imgIndex + 1) % images.length;
+        }, 1000 * 2);
+      }
+
+      function handleMouseOver() {
+        clearInterval(intervalSlide);
+      }
+      function handleMouseOut() {
+        startSlide();
+      }
+
+      function leftArrow() {
+        imgIndex = (imgIndex - 1 + images.length) % images.length;
+        slideContainer.setAttribute(
+          "style",
+          `background-image: url('${images[imgIndex]}')`
+        );
+        console.log(`imgindex value: ${imgIndex} and image of index${images} `);
+      }
+
+      function rightArrow() {
+        imgIndex = (imgIndex + 1) % images.length;
+        slideContainer.setAttribute(
+          "style",
+          `background-image: url('${images[imgIndex]}')`
+        );
+        console.log(`imgindex value: ${imgIndex} and image of index${images} `);
+      }
+      function firstImage() {
+        slideContainer.setAttribute(
+          "style",
+          `background-image: url('${images[0]}')`
+        );
+        // document.getElementById("btn-1").style.backgroundColor = "black";
+        console.log(` index${images} `);
+      }
+      function secondImage() {
+        slideContainer.setAttribute(
+          "style",
+          `background-image: url('${images[1]}')`
+        );
+        // document.getElementById("btn-2").style.backgroundColor = "black";
+        console.log(` index${images} `);
+      }
+      function thirdImage() {
+        slideContainer.setAttribute(
+          "style",
+          `background-image: url('${images[2]}')`
+        );
+        // document.getElementById("btn-3").style.backgroundColor = "black";
+        console.log(` index${images} `);
+      }
+      function forthImage() {
+        slideContainer.setAttribute(
+          "style",
+          `background-image: url('${images[3]}')`
+        );
+        // document.getElementById("btn-4").style.backgroundColor = "black";
+        console.log(` index${images} `);
+      }
+      //   function changeBtnColor() {
+      //    slideContainer.setAttribute(
+      //       "style",
+      //       `background-color: url('${images[1]}')`
+      //     );
+      //   }
+
+      startSlide();
+    </script>
+  </body>
+</html>
