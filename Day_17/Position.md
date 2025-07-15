@@ -19,7 +19,7 @@
 - it lose its own space
 - it moves from if its parent is relative
 - if you dont give any ralative value. it directly go to default body relative.
-- position absolute works in overlap situation.
+- position absolute works in **overlap** situation.
 - ( which one you have to move that element should be given absolute)
 
 ### Fixed
@@ -67,13 +67,19 @@
 - box-sizing: border => border to border width. if you giving padding value content space will be shared.
 -
 
+## Universel Selector (\*)
+
+- universel selector access all elements.
+
 ## DOM
 
 - HTML pharse and css pharse
 - html pharse converts html code into DOM
-- getElementByTagName, ClassName, Id these are all returns HTML collecion
+- getElementByTagName, ClassName these are all returns HTML collecion
 - querySelectorAll -> always return NodeList ==> it is used to select multiple class
-- querySelector  --> it is used to select single element for example using id. incase if you giving class it select first class element only.
-- 
+- querySelector --> it is used to select single element for example using id. incase if you giving class it select first class element only.
+-
 
 - backward compatibility
+
+### Dribble is used to trending design
