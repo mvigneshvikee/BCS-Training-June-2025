@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manupulation</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <h1>Welcome All</h1>
+    <h1>Thank You!</h1>
+    <button onclick="startColor()">Click Here to Start Color</button>
+    <button onclick="pauseColor()">Click Here to Pause Color</button>
+    <button onclick="stopColor()">Click Here to Stop Color</button>
+    <script>
+      //   const headings = document.querySelectorAll("h1");
+      //   console.log(headings[0].innerText);
+      //   //   const arr = [...headings];
+      //   const arr = Array.from(headings).map((heading) => heading.innerText);
+      //   console.log(arr);
+
+      // SetTimeOut and SetInterval
+      //   const msgInterval = setInterval(() => {
+      //     console.log("Hi, BCS!");
+      //   }, 1000 * 2);
+
+      //   console.log(msgInterval);
+
+      //   setTimeout(() => {
+      //     clearInterval(msgInterval);
+      //     // console.log("Interval cleared after 5 seconds.");
+      //   }, 6000); // Clears the interval after 5 seconds
+      const colors = ["crimson", "orange", "teal", "purple"];
+      let colorIndex = 0;
+      let colorInterval;
+      const startColor = () => {
+        colorInterval = setInterval(() => {
+          document.body.style.background = colors[colorIndex];
+          colorIndex = (colorIndex + 1) % colors.length;
+        }, 1000 * 2);
+      };
+
+      const pauseColor = () => {
+        clearInterval(colorInterval);
+      };
+      const stopColor = () => {
+        setTimeout(() => {
+          clearInterval(colorInterval);
+        });
+        colorIndex = 0;
+      };
+
+      // const colorChange = setInterval(() => {
+      //   document.body.style.background = colors[colorIndex];
+      //   // % modulo return remainder value --> (0+1)% 4 = 1
+      //    colorIndex = (colorIndex + 1) % colors.length;
+      // }, 1000 * 2);
+      // console.log(colorChange);
+    </script>
+  </body>
+</html>
