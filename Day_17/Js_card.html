@@ -5,20 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Creation JS</title>
     <style>
-      /* .countryDetails {
-        width: 300px;
-        aspect-ratio: 1/1;
-        background-color: aqua;
-        display: flex;
-        flex-wrap: wrap;
-        .card {
-          width: 100px;
-          height: 50px;
-          aspect-ratio: 1/1;
-          background-color: blueviolet;
-          outline: 2px solid black;
-        }
+      * {
+        box-sizing: border-box;
+      }
+      /* body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        justify-content: center;
       } */
+      .countryDetails {
+        max-width: 1400px;
+        margin: 0 auto;
+        /* aspect-ratio: 1/1; */
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        gap: 30px;
+        .card {
+          border-radius: 10px;
+          /* outline: 2px solid black; */
+          width: 350px;
+          overflow: hidden;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          > img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+          h3 {
+            font-size: x-large;
+          }
+          > h3,
+          p {
+            font-family: sans-serif;
+            font-weight: 600;
+            padding: 0 20px;
+          }
+        }
+      }
     </style>
   </head>
   <body>
@@ -90,7 +119,19 @@
         card.className = "card";
         const imgs = document.createElement("img");
         imgs.src = country.flag;
+        const countryName = document.createElement("h3");
+        countryName.innerText = country.name;
+        const countryPopulation = document.createElement("p");
+        countryPopulation.innerText = `Population: ${country.population}`;
+        const region = document.createElement("p");
+        region.innerText = `Region: ${country.region}`;
+        const capital = document.createElement("p");
+        capital.innerText = `Capital: ${country.capital}`;
         card.append(imgs);
+        card.append(countryName);
+        card.append(countryPopulation);
+        card.append(region);
+        card.append(capital);
         // card.innerHTML = ` <img src="${country.flag}" alt="${country.name} Flag">`;
 
         document.querySelector(".countryDetails").append(card);
