@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Down</title>
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-content: center;
+      }
+      /* .whishes {
+        font-family: sans-serif;
+        font-size: 40px;
+      } */
+      .countdown {
+        font: size 80px;
+        font-family: sans-serif;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1 class="whishes">10</h1> -->
+    <h2 class="countdown">10</h2>
+    <!-- <button onclick="startCountdown()">Start</button> -->
+
+    <script>
+      let countdown = document.querySelector(".countdown");
+      //   let whishes = document.querySelector(".whishes");
+      //   function startCountdown()
+      setTimeout(() => {
+        countdown.innerText = countdown.innerText - 1;
+        setTimeout(() => {
+          countdown.innerText = countdown.innerText - 1;
+          setTimeout(() => {
+            countdown.innerText = countdown.innerText - 1;
+            setTimeout(() => {
+              countdown.innerText = countdown.innerText - 1;
+              setTimeout(() => {
+                countdown.innerText = countdown.innerText - 1;
+                setTimeout(() => {
+                  countdown.innerText = countdown.innerText - 1;
+                  setTimeout(() => {
+                    countdown.innerText = countdown.innerText - 1;
+                    setTimeout(() => {
+                      countdown.innerText = countdown.innerText - 1;
+                      setTimeout(() => {
+                        countdown.innerText = countdown.innerText - 1;
+                        setTimeout(() => {
+                          countdown.innerText = "HAPPY INDEPENDANCE DAY";
+                          countdown.setAttribute(
+                            "style",
+                            "font-size:80px; color:orange"
+                          );
+                          //   countdown.whishes.innerText = "HAPPY NEW YEAR";
+                          // if (countdown === 0) {
+                          // }
+                        }, 1000);
+                      }, 1000);
+                    }, 1000);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    </script>
+  </body>
+</html>
