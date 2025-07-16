@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boil Egg Steps</title>
+  </head>
+  <body>
+    <script>
+      // varsion 1.1
+      console.log("👨‍🍳 Starting to boil an egg...\n");
+
+      const delay1 = Math.floor(Math.random() * 2000);
+      setTimeout(() => {
+        console.log(`✅ 1️⃣ Filling pot with water 💧 done in ${delay1}ms`);
+
+        const delay2 = Math.floor(Math.random() * 2000);
+        setTimeout(() => {
+          console.log(`✅ 2️⃣ Boiling the water 🔥 done in ${delay2}ms`);
+
+          const delay3 = Math.floor(Math.random() * 2000);
+          setTimeout(() => {
+            console.log(
+              `✅ 3️⃣ Dropping in the egg and cooking 🥚 done in ${delay3}ms`
+            );
+            console.log("\n🍳 Egg boiling steps completed!");
+          }, delay3);
+        }, delay2);
+      }, delay1);
+
+      // version 1.2
+
+      console.log("👨‍🍳 Starting to boil an egg...\n");
+
+      const steps = [
+        "1️⃣ Filling pot with water 💧",
+        "2️⃣ Boiling the water 🔥",
+        "3️⃣ Dropping in the egg and cooking 🥚",
+      ];
+
+      function runSteps(index) {
+        if (index >= steps.length) {
+          console.log("\n🍳 Egg boiling steps completed!");
+          return;
+        }
+
+        const delay = Math.floor(Math.random() * 2000);
+        setTimeout(() => {
+          console.log(`✅ ${steps[index]} done in ${delay}ms`);
+          runSteps(index + 1); // Call next step
+        }, delay);
+      }
+
+      runSteps(0); // Start from first step
+    </script>
+  </body>
+</html>
