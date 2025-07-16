@@ -8,50 +8,45 @@
   <body>
     <script>
       // varsion 1.1
-      console.log("👨‍🍳 Starting to boil an egg...\n");
+      // console.log("👨‍🍳 Starting to boil an egg...\n");
 
-      const delay1 = Math.floor(Math.random() * 2000);
-      setTimeout(() => {
-        console.log(`✅ 1️⃣ Filling pot with water 💧 done in ${delay1}ms`);
+      // const delay1 = Math.floor(Math.random() * 2000);
+      // setTimeout(() => {
+      //   console.log(`✅ 1️⃣ Filling pot with water 💧 done in ${delay1}ms`);
 
-        const delay2 = Math.floor(Math.random() * 2000);
-        setTimeout(() => {
-          console.log(`✅ 2️⃣ Boiling the water 🔥 done in ${delay2}ms`);
+      //   const delay2 = Math.floor(Math.random() * 2000);
+      //   setTimeout(() => {
+      //     console.log(`✅ 2️⃣ Boiling the water 🔥 done in ${delay2}ms`);
 
-          const delay3 = Math.floor(Math.random() * 2000);
-          setTimeout(() => {
-            console.log(
-              `✅ 3️⃣ Dropping in the egg and cooking 🥚 done in ${delay3}ms`
-            );
-            console.log("\n🍳 Egg boiling steps completed!");
-          }, delay3);
-        }, delay2);
-      }, delay1);
+      //     const delay3 = Math.floor(Math.random() * 2000);
+      //     setTimeout(() => {
+      //       console.log(
+      //         `✅ 3️⃣ Dropping in the egg and cooking 🥚 done in ${delay3}ms`
+      //       );
+      //       console.log("\n🍳 Egg boiling steps completed!");
+      //     }, delay3);
+      //   }, delay2);
+      // }, delay1);
 
-      // version 1.2
-
-      console.log("👨‍🍳 Starting to boil an egg...\n");
-
-      const steps = [
-        "1️⃣ Filling pot with water 💧",
-        "2️⃣ Boiling the water 🔥",
-        "3️⃣ Dropping in the egg and cooking 🥚",
-      ];
-
-      function runSteps(index) {
-        if (index >= steps.length) {
-          console.log("\n🍳 Egg boiling steps completed!");
-          return;
-        }
-
+      function boilStep(step, fn) {
         const delay = Math.floor(Math.random() * 2000);
+
         setTimeout(() => {
-          console.log(`✅ ${steps[index]} done in ${delay}ms`);
-          runSteps(index + 1); // Call next step
+          console.log(`✅ ${step} done in ${delay}ms`);
+          fn();
         }, delay);
       }
+      // function fn() {}
+      console.log("👨‍🍳 Starting to boil an egg...\n");
 
-      runSteps(0); // Start from first step
+      // These fire simultaneously — order is random!
+      boilStep("1️⃣ Filling pot with water 💧", () => {
+        boilStep("2️⃣ Boiling the water 🔥", () => {
+          boilStep("3️⃣ Dropping in the egg and cooking 🥚", () => {
+            console.log("cooking is done!");
+          });
+        });
+      });
     </script>
   </body>
 </html>
