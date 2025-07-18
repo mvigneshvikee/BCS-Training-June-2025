@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      /* body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        justify-content: center;
+      } */
+      .countryDetails {
+        max-width: 1400px;
+        margin: 0 auto;
+        /* aspect-ratio: 1/1; */
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        gap: 30px;
+        .card {
+          border-radius: 10px;
+          /* outline: 2px solid black; */
+          width: 350px;
+          overflow: hidden;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          > img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+          > .card-content {
+            padding: 0 15px;
+            h3 {
+              font-size: x-large;
+              /* padding: 0; */
+            }
+            p {
+              /* font-weight: 600; */
+              /* padding: 0; */
+              > span {
+                font-weight: 700;
+              }
+            }
+            > h3,
+            p {
+              font-family: sans-serif;
+              /* padding: 0 20px; */
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="countryDetails"></div>
+    <!-- task 1.5 -->
+    <ol class="top_10_countries"></ol>
+    <script>
+      // API Endpoint | fetch -> Promise
+      fetch(
+        "https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital"
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const arrCountry = [...data];
+          console.log(arrCountry);
+          const countryName = arrCountry.map((country) => country.name.common);
+          console.log(countryName);
+
+          // population
+          const filteredCountries = arrCountry
+            .filter((country) => country.population >= 10_000_000)
+            .sort((a, b) => b.population - a.population)
+            .map((country) => country.name.common);
+
+          console.log(filteredCountries);
+
+          // country with population
+          const filterWithPopulation = arrCountry.filter(
+            (country) => country.population >= 10_000_000
+          );
+          let count = 0;
+          const countryWithPopulation = filterWithPopulation.map((country) => {
+            count++;
+            return `${count}. ${country.name.common} - ${country.population}`;
+          });
+          console.log(countryWithPopulation.join("\n"));
+        });
+      // task 1.4
+      function task1_4() {
+        fetch(
+          "https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital"
+        )
+          .then((res) => res.json()) // .json() -> JSON -> JS Object
+          .then((data) => {
+            const sortPopulation = data.sort(
+              (a, b) => b.population - a.population
+            );
+            // console.log(sortPopulation);
+
+            let count = 0;
+
+            const top_10 = sortPopulation
+              .map((country) => {
+                count++;
+                return `${count}. ${country.name.common} - ${country.population}`;
+              })
+              .slice(0, 10);
+            console.log(top_10.join("\n"));
+          });
+      }
+      // task1_4();
+
+      // task 1.5
+      function task1_5() {
+        fetch(
+          "https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital"
+        )
+          .then((res) => res.json()) // .json() -> JSON -> JS Object
+          .then((data) => {
+            // const listContries = document.querySelector(".top_10_countries")[0];
+            const sortPopulation = data.sort(
+              (a, b) => b.population - a.population
+            );
+            // console.log(sortPopulation);
+
+            const top_10 = sortPopulation
+              .map((country) => {
+                return ` ${country.name.common} - ${country.population}`;
+              })
+              .slice(0, 10);
+            // console.log(top_10);
+
+            for (let country of top_10) {
+              const listItems = document.createElement("li");
+              listItems.innerText = country;
+              document.querySelector(".top_10_countries").append(listItems);
+            }
+          });
+      }
+      // task1_5();
+
+      // Task 1.6
+      function task1_6() {
+        fetch(
+          "https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital"
+        )
+          .then((res) => res.json()) // .json() -> JSON -> JS Object
+          .then((data) => {
+            for (let country of data) {
+              const card = document.createElement("div");
+              card.className = "card";
+              card.innerHTML = `<img src="${
+                country.flags.svg ?? country.flags.png
+              }" alt="${country.name} Flag">
+        <div class="card-content">
+          <h3>${country.name.common}</h3>
+          <p><span>Population:</span> ${country.population}</p>
+          <p><span>Region:</span> ${country.region}</p>
+          <p><span>Capital:</span> ${country.capital}</p>
+          </div>`;
+              // card.innerHTML = ` <img src="${country.flag}" alt="${country.name} Flag">`;
+              document.querySelector(".countryDetails").append(card);
+            }
+          });
+      }
+      task1_6();
+
+      //  Task 1.1 -> Print all the country names
+      // ["India", "China", "United States" ...] // 250 countries
+    </script>
+  </body>
+</html>
