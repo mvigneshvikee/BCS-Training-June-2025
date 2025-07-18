@@ -42,6 +42,12 @@
 - then web apis will throw the setTimeOut to callback queue.Callback Queue throws setTimeOut when call stack is free.
 - **EventLoop** is checks the call stack is empty then it will throw **callbackqueue** items to call stack.
 
+#### Interview Question
+
+- Callback Queue have **two types**
+- One is Normal Queue (setTimeOut, setInterval, Eventhandlers)
+- Secone one is VIP Queue (Promises)
+
 - Asynchronous functions are going to web apis
 - Call Stack == **Main thread**
 
