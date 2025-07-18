@@ -28,25 +28,50 @@
       //   }, delay2);
       // }, delay1);
 
-      function boilStep(step, fn) {
+      // version 1.2
+      // function boilStep(step, fn) {
+      //   const delay = Math.floor(Math.random() * 2000);
+
+      //   setTimeout(() => {
+      //     console.log(`✅ ${step} done in ${delay}ms`);
+      //     fn();
+      //   }, delay);
+      // }
+      // // function fn() {}
+      // console.log("👨‍🍳 Starting to boil an egg...\n");
+
+      // // These fire simultaneously — order is random!
+      // boilStep("1️⃣ Filling pot with water 💧", () => {
+      //   boilStep("2️⃣ Boiling the water 🔥", () => {
+      //     boilStep("3️⃣ Dropping in the egg and cooking 🥚", () => {
+      //       console.log("cooking is done!");
+      //     });
+      //   });
+      // });
+
+      // Using Promise
+      function boilStep(step) {
         const delay = Math.floor(Math.random() * 2000);
-
-        setTimeout(() => {
-          console.log(`✅ ${step} done in ${delay}ms`);
-          fn();
-        }, delay);
-      }
-      // function fn() {}
-      console.log("👨‍🍳 Starting to boil an egg...\n");
-
-      // These fire simultaneously — order is random!
-      boilStep("1️⃣ Filling pot with water 💧", () => {
-        boilStep("2️⃣ Boiling the water 🔥", () => {
-          boilStep("3️⃣ Dropping in the egg and cooking 🥚", () => {
-            console.log("cooking is done!");
-          });
+        return new Promise((resolve, reject) => {
+          try {
+            setTimeout(() => {
+              console.log(`✅ ${step} done in ${delay}ms`);
+              resolve();
+            }, delay);
+          } catch {
+            reject("Unfortunatly cooking stoped");
+          }
         });
-      });
+      }
+
+      console.log("👨‍🍳 Starting to boil an egg...");
+
+      boilStep("1️⃣ Filling pot with water 💧")
+        .then(() => boilStep("2️⃣ Boiling the water 🔥"))
+        .then(() => boilStep("3️⃣ Dropping in the egg and cooking 🥚"))
+        .then(() => {
+          console.log("🍳 Cooking is done!");
+        });
     </script>
   </body>
 </html>
