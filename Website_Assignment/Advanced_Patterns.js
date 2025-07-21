@@ -153,6 +153,43 @@ const updateOrAddMovie = (movies, newMovie) => {
   return movies;
 };
 
+// Version 1.2
+const updateOrAddMovie1 = (movies, newMovie) => {
+  const { id } = newMovie;
+
+  const index = movies.findIndex((movie) => movie.id === id);
+
+  if (index !== -1) {
+    // Update existing movie
+    return movies.map((movie) =>
+      movie.id === id
+        ? {
+            ...movie,
+            ...newMovie,
+            ratings: newMovie.ratings ?? movie.ratings,
+            director: newMovie.director ?? movie.director,
+            year: newMovie.year ?? movie.year,
+            genre: newMovie.genre ?? movie.genre,
+            title: newMovie.title ?? movie.title,
+          }
+        : movie
+    );
+  } else {
+    // Add new movie
+    return [
+      ...movies,
+      {
+        id,
+        title: newMovie.title ?? "Untitled",
+        director: newMovie.director ?? "Unknown",
+        year: newMovie.year ?? new Date().getFullYear(),
+        ratings: newMovie.ratings ?? [],
+        genre: newMovie.genre ?? "Unknown",
+      },
+    ];
+  }
+};
+
 // ===== Test cases =====
 const newMovie = {
   id: 4,
