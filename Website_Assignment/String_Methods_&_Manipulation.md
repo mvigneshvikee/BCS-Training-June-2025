@@ -64,16 +64,58 @@ Determine if a string is a palindrome ignoring case and non-alphanumerics.
 ### Answer
 
 ```js
-// Create an arrow function that adds two numbers
-const add = (a, b) => a + b;
-console.log(add(5, 3));
-console.log(add(10, 7));
+const inputs = ["Madam", "RaceCar!", "Hello"];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that checks for palindrome
+const isPalindrome = (s) => {
+  //The Regex: /[^a-z0-9]/g
+  const clean = s.toLowerCase().replace(/[^a-z0-9]/g, ""); // remove non-alphanumeric
+  const reversed = clean.split("").reverse().join("");
+  return clean === reversed;
+};
+
+console.log(inputs.map(isPalindrome));
 ```
 
 ### Expected Output:
 
 ```js
 [true, true, false];
+```
+
+---
+
+## Exercise 43 Mask Email
+
+Mask username part of an email, leaving only first & last char.
+
+### Answer
+
+```js
+const email1 = "ragavkumarv@example.com";
+const email2 = "john.doe@gmail.com";
+
+// ===== YOUR CODE BELOW =====
+// Write a function to mask email username
+const maskEmail = (email) => {
+  // Your code here
+  const [username, domain] = email.split("@");
+  const maskedUsername = username
+    .split("")
+    .map((ch, i) => (i === 0 || i === username.length - 1 ? ch : "*"))
+    .join("");
+  return `${maskedUsername}@${domain}`;
+};
+console.log(maskEmail(email1));
+console.log(maskEmail(email2));
+```
+
+### Expected Output:
+
+```js
+r**********v@example.com
+j*****e@gmail.com
 ```
 
 ---
