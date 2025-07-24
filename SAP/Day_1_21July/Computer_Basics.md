@@ -127,3 +127,33 @@
 
 - JDBC
 - ODBc
+
+### Intonation ==> Pitch
+
+- Intonation is more important to telling a sentence in various way.
+- MS-Office written in VB(Visual Basic) Language.
+
+#### Sap Modules
+
+- ABAP
+- FICO
+- SD
+- MM
+- PP
+- SCM
+- SRM
+- PO
+
+- Task
+- ERP Softwares
+- Non SAP ERP software
+- List SAP Modules
+- List out the company names which are implementing SAP
+- Sectors
+  - Pharma
+  - Oil and Gas
+  - Manufacturing
+  - Food and Beverages
+  - Chemicals
+  - Retail
+  - Wholesale
