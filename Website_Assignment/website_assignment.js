@@ -540,7 +540,7 @@ const getAverageRatingByYear = (movies, year) => {
 
 // exercise 31
 
-const movies = [
+const movies54 = [
   { id: 1, title: "Baahubali", ratings: [8, 9, 10] },
   { id: 2, title: "Arjun Reddy", ratings: [9, 8, 9] },
   { id: 3, title: "Mahanati", ratings: [10, 9, 8] },
@@ -558,4 +558,37 @@ const getMoviesWithHighestRatings = (movies) => {
   return movie;
 };
 
-console.log(JSON.stringify(getMoviesWithHighestRatings(movies)));
+// console.log(JSON.stringify(getMoviesWithHighestRatings(movies)));
+
+// exercise 32
+const movies = [
+  { id: 1, title: "Baahubali", director: "S. S. Rajamouli" },
+  { id: 2, title: "Arjun Reddy", director: "Sandeep Reddy Vanga" },
+  { id: 3, title: "Mahanati", director: "Nag Ashwin" },
+  { id: 4, title: "Eega", director: "S. S. Rajamouli" },
+  { id: 5, title: "Jersey", director: "Gowtam Tinnanuri" },
+];
+const getDirectorWithMostMovies = (movies) => {
+  const directorCount = {};
+
+  // Count how many times each director appears
+  for (const movie of movies) {
+    const director = movie.director;
+    directorCount[director] = (directorCount[director] || 0) + 1;
+  }
+
+  // Find the director with the maximum count
+  let maxDirector = "";
+  let maxCount = 0;
+
+  for (const [director, count] of Object.entries(directorCount)) {
+    if (count > maxCount) {
+      maxDirector = director;
+      maxCount = count;
+    }
+  }
+
+  return maxDirector;
+};
+
+console.log(getDirectorWithMostMovies(movies));
