@@ -7,8 +7,12 @@
 
 ## List of ERP Softwares
 
-- SAP ERP
+### SAP ERP
+
+- SAP ECC
+- SAP S/4HANA
 - SAP Business One
+- SAP BusinessBy Desing
   > **Non SAP ERP Softwares**
 - NetSuite --> Oracle NetSuite
 - Acumatica
@@ -44,6 +48,7 @@
 
 ### SAP Modules:
 
+- **There are 64+ SAP Modules available**
 - There are 2 types of Modules
   - Functional Modules
   - Technical Modules
@@ -109,7 +114,7 @@ These are used mostly by **IT people, software developers, and system admins**.
 | ----------------- | ----------------------------------------------------------------------- |
 | **SAP ABAP**      | Programming language to create custom SAP reports, forms, interfaces    |
 | **SAP BASIS**     | Handles system setup, installation, performance tuning, user management |
-| **SAP HANA**      | In-memory database for high-speed data processing                       |
+| **SAP S/4HANA**   | In-memory database for high-speed data processing                       |
 | **SAP PI/PO**     | Integration tools to connect SAP with other applications                |
 | **SAP Fiori**     | Used to design modern and user-friendly SAP web/mobile apps             |
 | **SAP NetWeaver** | Platform that supports SAP apps and services                            |
@@ -137,6 +142,117 @@ These are used mostly by **IT people, software developers, and system admins**.
 | **SAP Concur**          | Travel and expense management                     |
 | **SAP Analytics Cloud** | Business intelligence and reporting               |
 | **SAP C/4HANA**         | Customer Experience (CRM) Suite                   |
+
+---
+
+## ✅ Companies Using SAP by Industry
+
+### 💊 _Pharma Domain_
+
+1. _Pfizer_
+2. _Dr. Reddy’s Laboratories_
+3. _Sun Pharma_
+4. _Novartis_
+5. _GSK (GlaxoSmithKline)_
+6. _Cipla_
+7. _Sanofi_
+8. _Lupin_
+9. _Aurobindo Pharma_
+10. _Johnson & Johnson_
+
+---
+
+### ⛽ _Oil & Gas_
+
+1. _Shell_
+2. _BP (British Petroleum)_
+3. _Indian Oil Corporation (IOCL)_
+4. _ONGC_
+5. _ExxonMobil_
+6. _Chevron_
+7. _Reliance Industries_
+8. _Bharat Petroleum (BPCL)_
+9. _Petronas_
+10. _Saudi Aramco_
+
+---
+
+### 🏭 _Manufacturing_
+
+1. _Siemens_
+2. _GE (General Electric)_
+3. _Bosch_
+4. _Tata Motors_
+5. _Mahindra & Mahindra_
+6. _Hero MotoCorp_
+7. _Ashok Leyland_
+8. _Toyota_
+9. _Ford_
+10. _Cummins_
+
+---
+
+### 🍔 _Food & Beverages_
+
+1. _Nestlé_
+2. _PepsiCo_
+3. _Coca-Cola_
+4. _Amul_
+5. _Britannia_
+6. _ITC Limited_
+7. _Hindustan Unilever (HUL)_
+8. _Mondelez (Cadbury)_
+9. _Parle Products_
+10. _Kellogg’s_
+
+---
+
+### ⚗️ _Chemicals_
+
+1. _BASF_
+2. _Dow Chemicals_
+3. _DuPont_
+4. _LyondellBasell_
+5. _Clariant_
+6. _Tata Chemicals_
+7. _SRF Limited_
+8. _Pidilite Industries_
+9. _Evonik Industries_
+10. _Huntsman_
+
+---
+
+### 🛒 _Retail_
+
+1. _Walmart_
+2. _Amazon (SAP for logistics & HR modules)_
+3. _Reliance Retail_
+4. _Big Bazaar (Future Group)_
+5. _Aditya Birla Retail (More)_
+6. _Tesco_
+7. _Target_
+8. _Metro AG_
+9. _Marks & Spencer_
+10. _Avenue Supermarts (DMart)_
+
+---
+
+### 📦 _Wholesale_
+
+1. _METRO Cash & Carry_
+2. _Sysco_
+3. _Makro_
+4. _Staples_
+5. _Costco Wholesale_
+6. _Würth Group_
+7. _Grainger_
+8. _C\&S Wholesale Grocers_
+9. _HD Supply_
+10. _Fastenal_
+
+### Robotics
+
+### Defence
 
 ---
 
