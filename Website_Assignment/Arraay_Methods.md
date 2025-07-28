@@ -1,6 +1,6 @@
 # Array
 
-## Exercise 15 ( 1 )
+## Exercise 15 ( 1 ) Basic Array Map
 
 Transform an array of numbers by doubling each value using the map method.
 
@@ -27,7 +27,7 @@ console.log(JSON.stringify(doubleNumbers(numbers)));
 
 ---
 
-## Exercise 16 ( 2 )
+## Exercise 16 ( 2 ) Basic Array Filter
 
 Filter an array to keep only even numbers using the filter method.
 
