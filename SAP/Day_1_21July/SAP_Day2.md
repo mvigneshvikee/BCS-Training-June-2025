@@ -124,10 +124,60 @@ Example: Want to rename a field label.
 ABAP Landscape
 
 - 1. Development System (DVS) ==> ABAP Module
-- 2. QAS
-- 3. PS --> Production System (PRD)
+  - DS SID --> DEV
+- 2. QAS --> TST (name for QA)
+  - QS SID --> QAS
+- 3. PS --> Production System (SID -->PRD)
 - 4. Sand Box --> Practice System ==> It is Optional
+  - Sand Box does not connected Transport system.(Dev sys, QA sys and Ps) That will impact whole Transport System.
+- Each system identify with IP Address and Host Name.
+
+### SAP Application Connect panna use agura ways.
+
+- SID ==> PRD (SID always unique)
+- Instance Number --> 000 or 124 (SID different ah irunthal IN number same ah kudukalam)
+- IP Address
+- Host Name
+
+### Authentication
+
+- User name and password
+
+### Autheritation
+
+- Access the roles
 
 - TR - Transport Request --> Capture Data
 
-- Transport Management ==> Transport Codes
+- Transport Management ==> Transport Codes. This is a one of sap module.
+
+### Basic BI 3 System Landscape
+
+These are all Consultants are Manditary
+
+- Win Admin--OS
+- SAP Basis Consultant
+- DB Consultants
+- ABAP Consultant
+- SAP Security Consultant
+- BI Consultant
+
+## What are system in the landscape
+
+- HR
+- BI
+- S/4 HANA
+
+### how many systems in the landscape
+
+- SAP Basis Admins Full Access to Production System
+- Tester and limited ABAP consultants only access QA System
+-
+- SAP Logon Pad, SAP GUI, SAP Front-end. These are all to access SAP connect panna use agum.
+
+### Scopes
+
+- Implementation Scope
+- Support Scope
+- Migration Scope
+- Upgrade Scope
