@@ -51,6 +51,25 @@ const isPalindrome = (s) => {
 
 // console.log(inputs.map(isPalindrome));
 
+// Version 1.2 exercise 42
+
+const inputs1 = ["Madam", "RaceCar!", "Hello"];
+
+// ===== YOUR CODE BELOW =====
+// Write a function that checks for palindrome
+const palindomeFunciton = (inputsOfWords) => {
+  const checkNames = inputsOfWords.map((s) => {
+    //The Regex: /[^a-z0-9]/g
+    const clean = s.toLowerCase().replace(/[^a-z0-9]/g, ""); // remove non-alphanumeric
+    const reversed = clean.split("").reverse().join("");
+    return clean === reversed;
+  });
+  return checkNames;
+};
+
+console.log(palindomeFunciton(inputs));
+
+// =====================================================================
 // Exercise 43
 
 const email1 = "ragavkumarv@example.com";
