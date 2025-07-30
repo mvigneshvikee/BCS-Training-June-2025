@@ -208,7 +208,7 @@ const users = [
 // Write a function that returns the name of a user's first friend
 const getFirstFriendName = (users, userId) => {
   // Your code here - use nested destructuring
-  // const friend = users.find((user) => user.id == userId);
+  const friend = users.find((user) => user.id == userId);
   // const bestFriend = friend?.friends?.[0]?.name
   //   ? friend?.friends?.[0]?.name
   //   : friend?.friends.length == 0
