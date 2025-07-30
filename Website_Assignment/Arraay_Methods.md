@@ -325,6 +325,8 @@ const getAverageRatingAfterYear = (movies, year) => {
     return "No movies found after the given year";
   }
 
+  // Destructuring in parameter:
+  // const allTitles = filteredMovies.map(({ title }) => title);
   // Collect all ratings into a single array map() + flat() ==> flatMap()
   const allRatings = filteredMovies.flatMap(({ ratings }) => ratings);
 
