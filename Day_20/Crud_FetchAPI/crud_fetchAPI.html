@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD with Profile Pic</title>
+    <style>
+      .user-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .user-card {
+        border: 1px solid #ccc;
+        padding: 12px;
+        margin: 10px 0;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+      .user-card img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      input {
+        margin: 5px;
+        padding: 6px;
+      }
+      button {
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="add-user-form">
+      <input class="add-user-name" placeholder="Enter username" />
+      <input class="add-user-profile" placeholder="Enter profile pic URL" />
+      <button onclick="addUser()">Submit</button>
+    </div>
+    <hr />
+
+    <div class="user-list">
+      <!-- Users will be loaded here -->
+    </div>
+
+    <script>
+      const apiUrl = "https://60c98aa8772a760017203b57.mockapi.io/users";
+
+      async function fetchUsers() {
+        const res = await fetch(apiUrl);
+        const users = await res.json();
+
+        const userList = document.querySelector(".user-list");
+        userList.innerHTML = "";
+
+        users.forEach((user) => {
+          const div = document.createElement("div");
+          div.className = "user-card";
+          div.innerHTML = `
+          <img src="${user.avatar}" alt="${user.name}" />
+          <div>
+            <h3>${user.name}</h3>
+            <button onclick="editUser('${user.id}', '${user.name}', '${user.avatar}')">Edit</button>
+            <button onclick="deleteUser('${user.id}')">Delete</button>
+          </div>
+        `;
+          userList.appendChild(div);
+        });
+      }
+
+      async function addUser() {
+        const nameInput = document.querySelector(".add-user-name");
+        const profileInput = document.querySelector(".add-user-profile");
+        const name = nameInput.value.trim();
+        const avatar = profileInput.value.trim();
+
+        if (!name || !avatar) return alert("Please fill both fields");
+
+        await fetch(apiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, avatar }),
+        });
+
+        nameInput.value = "";
+        profileInput.value = "";
+        fetchUsers();
+      }
+
+      async function editUser(id, oldName, oldAvatar) {
+        const name = prompt("Edit name", oldName);
+        const avatar = prompt("Edit profile pic URL", oldAvatar);
+
+        if (name && avatar) {
+          await fetch(`${apiUrl}/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, avatar }),
+          });
+          fetchUsers();
+        }
+      }
+
+      async function deleteUser(id) {
+        if (confirm("Are you sure you want to delete this user?")) {
+          await fetch(`${apiUrl}/${id}`, {
+            method: "DELETE",
+          });
+          fetchUsers();
+        }
+      }
+
+      // Load on page
+      fetchUsers();
+    </script>
+  </body>
+</html>
