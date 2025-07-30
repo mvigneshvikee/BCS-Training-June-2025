@@ -1,9 +1,11 @@
 # Destructring
 
-## Exercise 9  Basic Object Destructuring
+## Exercise 9 Basic Object Destructuring
+
 Extract properties from an object using destructuring assignment.
 
 ### Answer
+
 ```js
 const person = { name: "Alice", age: 30, city: "New York" };
 
@@ -11,8 +13,8 @@ const person = { name: "Alice", age: 30, city: "New York" };
 // Use object destructuring to extract name and age
 const extractPersonInfo = (person) => {
   // Your code here - use destructuring
-  const {name, age}= person
-  
+  const { name, age } = person;
+
   return `${name} is ${age} years old`;
 };
 
@@ -20,12 +22,15 @@ console.log(extractPersonInfo(person));
 ```
 
 ### Expected Output:
+
 ```js
 Alice is 30 years old
 ```
+
 ---
 
-## Exercise 10   Array Destructuring Basics
+## Exercise 10 Array Destructuring Basics
+
 Extract elements from an array using destructuring assignment.
 
 ### Answer
@@ -38,25 +43,29 @@ const coordinates = [10, 20];
 // Use array destructuring to extract first two colors
 const getFirstTwoColors = (colors) => {
   // Your code here - use array destructuring
-  const [first, second] = colors
+  const [first, second] = colors;
   return `First: ${first}, Second: ${second}`;
 };
 
 console.log(getFirstTwoColors(colors));
-
 ```
+
 ### Expected Output:
+
 ```js
 
 First: red, Second: green
 
 ```
+
 ---
 
-## Exercise 11  Basic Spread Operator 
+## Exercise 11 Basic Spread Operator
+
 Use the spread operator to combine arrays and copy objects.
 
 ### Answer
+
 ```js
 /const fruits = ["apple", "banana"];
 const vegetables = ["carrot", "broccoli"];
@@ -66,20 +75,26 @@ const vegetables = ["carrot", "broccoli"];
 const combineArrays = (arr1, arr2) => {
   // Your code here - use spread operator
   return [...arr1, ...arr2]
-  
+
 };
 
 console.log(JSON.stringify(combineArrays(fruits, vegetables)));
 ```
 
 ### Expected Output:
+
 ```js
-["apple","banana","carrot","broccoli"]
+["apple", "banana", "carrot", "broccoli"];
 ```
+
 ---
-## Exercise 12  Extract User's Preferences with Destructuring
+
+## Exercise 12 Extract User's Preferences with Destructuring
+
 Write a function that extracts the user's name and theme, providing default values if they are missing using destructuring with default values.
+
 ### Answer
+
 ```js
 const userProfile = {
   id: 1,
@@ -91,13 +106,12 @@ const userProfile = {
 
 const userWithoutSettings = { id: 2, name: "Adam" };
 
-
 // ===== YOUR CODE BELOW =====
 // Write a function that extracts the user's name and theme with default values
 const getUserSettings = (user) => {
   // Your code here - use destructuring with default values
-  const {name, settings:{theme = "light"}={}} = user
-  return `${name} prefers the ${theme} theme`
+  const { name, settings: { theme = "light" } = {} } = user;
+  return `${name} prefers the ${theme} theme`;
 };
 
 console.log(getUserSettings(userProfile));
@@ -105,16 +119,20 @@ console.log(getUserSettings(userWithoutSettings));
 ```
 
 ### Expected Output:
+
 ```js
 Eve prefers the dark theme
 Adam prefers the light theme
 ```
+
 ---
 
-## Exercise 13  Enhance Employee Skills with Spread Operator
+## Exercise 13 Enhance Employee Skills with Spread Operator
+
 Write a function that returns a new array with an additional skill for each employee using destructuring and the spread operator.
 
 ### Answer
+
 ```js
 const employees = [
   {
@@ -129,11 +147,11 @@ const employees = [
     position: "Manager",
     skills: ["Leadership", "Communication"],
   },
-  { 
-    id: 3, 
-    name: "Charlie", 
-    position: "CEO", 
-    skills: ["Strategy", "Vision"] 
+  {
+    id: 3,
+    name: "Charlie",
+    position: "CEO",
+    skills: ["Strategy", "Vision"],
   },
 ];
 const addSkill = (employees, newSkill) => {
@@ -147,46 +165,38 @@ console.log(JSON.stringify(addSkill(employees, "Problem Solving"), null, 2));
 ```
 
 ### Expected Output:
+
 ```js
 [
   {
-    "id": 1,
-    "name": "Alice",
-    "position": "Developer",
-    "skills": [
-      "JavaScript",
-      "React",
-      "Problem Solving"
-    ]
+    id: 1,
+    name: "Alice",
+    position: "Developer",
+    skills: ["JavaScript", "React", "Problem Solving"],
   },
   {
-    "id": 2,
-    "name": "Bob",
-    "position": "Manager",
-    "skills": [
-      "Leadership",
-      "Communication",
-      "Problem Solving"
-    ]
+    id: 2,
+    name: "Bob",
+    position: "Manager",
+    skills: ["Leadership", "Communication", "Problem Solving"],
   },
   {
-    "id": 3,
-    "name": "Charlie",
-    "position": "CEO",
-    "skills": [
-      "Strategy",
-      "Vision",
-      "Problem Solving"
-    ]
-  }
-]
+    id: 3,
+    name: "Charlie",
+    position: "CEO",
+    skills: ["Strategy", "Vision", "Problem Solving"],
+  },
+];
 ```
+
 ---
 
-## Exercise 14  Find First Friend's Name
+## Exercise 14 Find First Friend's Name
+
 Write a function that returns the name of a user's first friend using nested destructuring and array methods.
 
 ### Answer
+
 ```js
 const users = [
   { id: 1, name: "Alice", friends: [{ name: "Bob" }, { name: "Charlie" }] },
@@ -198,11 +208,18 @@ const users = [
 // Write a function that returns the name of a user's first friend
 const getFirstFriendName = (users, userId) => {
   // Your code here - use nested destructuring
-  const friend = users.find(user => user.id == userId )
-  const bestFriend =  friend?.friends[0]?.name ? friend?.friends[0]?.name  : 
-  friend?.friends.length == 0 ? `${friend.name} has no friend 😥` : "User not found"
-  return bestFriend
-  
+  // const friend = users.find((user) => user.id == userId);
+  // const bestFriend = friend?.friends?.[0]?.name
+  //   ? friend?.friends?.[0]?.name
+  //   : friend?.friends.length == 0
+  //   ? `${friend.name} has no friend 😥`
+  //   : "User not found";
+  // return bestFriend;
+
+  // Version 1.2
+  return !friend
+    ? "User not found"
+    : friend?.friends?.[0]?.name ?? `${friend.name} has no friend 😥`;
 };
 
 console.log(getFirstFriendName(users, 1));
@@ -212,12 +229,12 @@ console.log(getFirstFriendName(users, 4));
 ```
 
 ### Expected Output:
+
 ```js
 Bob
 Eve
 User not found
 Deepak has no friend 😥
 ```
+
 ---
-
-
