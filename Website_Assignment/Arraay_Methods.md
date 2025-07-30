@@ -236,15 +236,17 @@ const movies = [
 // Write a function that finds a movie by ID and returns formatted details
 const getMovieDetails = (movies, id) => {
   const vowels = ["a", "e", "i", "o", "u"];
-  const filterMovie = movies.filter((movie) => movie.id == id);
-  if (filterMovie.length != 0) {
-    const firstLetter = filterMovie[0].genre.slice(0, 1).toLowerCase();
+  const filterMovie = movies.find((movie) => movie.id == id);
+  if (filterMovie) {
+    const firstLetter = filterMovie.genre.slice(0, 1).toLowerCase();
 
     if (vowels.includes(firstLetter)) {
-      return `${filterMovie[0].title} is an ${filterMovie[0].genre} movie`;
+      return `${filterMovie.title} is an ${filterMovie.genre} movie`;
     } else {
-      return `${filterMovie[0].title} is a ${filterMovie[0].genre} movie`;
+      return `${filterMovie.title} is a ${filterMovie.genre} movie`;
     }
+    // using ternary operator
+    //  return vowels.includes(firstLetter) ?  `${filterMovie.title} is an ${filterMovie.genre} movie`: `${filterMovie.title} is a ${filterMovie.genre} movie`
   } else {
     return `Movies not Found`;
   }
