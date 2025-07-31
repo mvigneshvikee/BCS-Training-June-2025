@@ -19,6 +19,9 @@
         justify-content: center;
         gap: 15px;
       }
+      .update-user-form {
+        display: none;
+      }
       .user-card img {
         width: 60px;
         height: 60px;
@@ -36,6 +39,7 @@
     </style>
   </head>
   <body>
+    <div class="user-card"></div>
     <div class="add-user-form">
       <input class="add-user-name" placeholder="Enter username" />
       <input class="add-user-profile" placeholder="Enter profile pic URL" />
@@ -55,20 +59,26 @@
         const users = await res.json();
 
         const userList = document.querySelector(".user-list");
-        userList.innerHTML = "";
+        // userList.innerHTML = "";
 
         users.forEach((user) => {
-          const div = document.createElement("div");
-          div.className = "user-card";
-          div.innerHTML = `
+          //   const div = document.createElement("div");
+          //   div.className = "user-card";
+          userList.innerHTML += `<div class="user-card">
           <img src="${user.avatar}" alt="${user.name}" />
           <div>
             <h3>${user.name}</h3>
+             <div class="update-user-form">
+      <input class="update-user-name" placeholder="Enter username" />
+      <input class="update-user-profile" placeholder="Enter profile pic URL" />
+      <button onclick="updateUser()">Save</button>
+    </div>
             <button onclick="editUser('${user.id}', '${user.name}', '${user.avatar}')">Edit</button>
             <button onclick="deleteUser('${user.id}')">Delete</button>
           </div>
+           </div>
         `;
-          userList.appendChild(div);
+          //   userList.appendChild(div);
         });
       }
 
@@ -92,8 +102,17 @@
       }
 
       async function editUser(id, oldName, oldAvatar) {
-        const name = prompt("Edit name", oldName);
-        const avatar = prompt("Edit profile pic URL", oldAvatar);
+        const updateDiv = document.querySelector(".update-user-form");
+        updateDiv.style.display = "grid";
+        const nameInput = document.querySelector(".update-user-name");
+        const profileInput = document.querySelector(".update-user-profile");
+        const name = oldName;
+        const avatar = oldAvatar;
+        console.log(id);
+
+        // updateDiv.setAttribute("style", "display: grid")
+        // const name = prompt("Edit name", oldName);
+        // const avatar = prompt("Edit profile pic URL", oldAvatar);
 
         if (name && avatar) {
           await fetch(`${apiUrl}/${id}`, {
