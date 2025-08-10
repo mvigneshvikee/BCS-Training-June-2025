@@ -55,6 +55,8 @@
         return new Promise((resolve, reject) => {
           try {
             setTimeout(() => {
+              // resolve(`Step "${step}" done in ${delay}ms`);
+
               console.log(`✅ ${step} done in ${delay}ms`);
               resolve();
             }, delay);
@@ -63,15 +65,29 @@
           }
         });
       }
+      // usign async await
+      async function startCooking() {
+        // const step1 = await boilStep("1️⃣ Filling pot with water 💧");
+        // console.log(step1);
+        // const step2 = await boilStep("2️⃣ Boiling the water 🔥");
+        // console.log(step2);
+        // const step3 = await boilStep("3️⃣ Dropping in the egg and cooking 🥚");
+        // console.log(step3);
+        await boilStep("1️⃣ Filling pot with water 💧");
+        await boilStep("2️⃣ Boiling the water 🔥");
+        await boilStep("3️⃣ Dropping in the egg and cooking 🥚");
+        console.log("🍳 Cooking is done!");
+      }
 
       console.log("👨‍🍳 Starting to boil an egg...");
-
-      boilStep("1️⃣ Filling pot with water 💧")
-        .then(() => boilStep("2️⃣ Boiling the water 🔥"))
-        .then(() => boilStep("3️⃣ Dropping in the egg and cooking 🥚"))
-        .then(() => {
-          console.log("🍳 Cooking is done!");
-        });
+      startCooking();
+      // console.log(startCooking());
+      // boilStep("1️⃣ Filling pot with water 💧")
+      //   .then(() => boilStep("2️⃣ Boiling the water 🔥"))
+      //   .then(() => boilStep("3️⃣ Dropping in the egg and cooking 🥚"))
+      //   .then(() => {
+      //     console.log("🍳 Cooking is done!");
+      //   });
     </script>
   </body>
 </html>
