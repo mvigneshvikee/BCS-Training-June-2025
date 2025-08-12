@@ -9,7 +9,7 @@
 - Humble Braging => suyaperumai pesubavar.
 - Brain Stoming ==> Throwing ideas
 
-## Code Quality - 5 Pillars
+## Code Quality - 5 Principle of Code Pillars
 
 1. Readability - 75% => Read Only
    - Giving meaning full variable names. Declarative
